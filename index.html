@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>MedCai — prévia das páginas de venda</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&family=Epilogue:wght@400;700&display=swap" rel="stylesheet">
+<style>
+/* Estilo C: preto + dourado, títulos em Montserrat 800 e texto em Epilogue (as mesmas cores das páginas C) */
+:root { --bg: #0C0B09; --card: #17140F; --card2: #1C1812; --line: #2F2920; --acc: #E2B657; --acc-rgb: 226,182,87; --tx: #F5EFE2; --tx-h: #FBF6EA;
+        --fh: "Montserrat", Arial, sans-serif; --fb: "Epilogue", system-ui, sans-serif; }
+*, *::before, *::after { box-sizing: border-box; }
+body { margin: 0; min-height: 100vh; background: var(--bg); color: var(--tx); font-family: var(--fb); font-size: 16.5px; line-height: 1.6; }
+main { max-width: 720px; margin: 0 auto; padding: clamp(56px, 10vw, 112px) 20px; }
+h1 { margin: 0; font-family: var(--fh); font-weight: 800; font-size: clamp(30px, 5.2vw, 48px); line-height: 1.1; letter-spacing: -.02em; color: var(--tx-h); text-wrap: balance; }
+.aviso { margin: 18px 0 0; font-weight: 700; color: var(--acc); }
+ol { list-style: none; margin: 44px 0 0; padding: 0; display: grid; gap: 12px; }
+a { display: block; padding: 20px 22px; border: 1px solid var(--line); border-radius: 16px; background: var(--card); color: var(--tx-h); text-decoration: none;
+    font-family: var(--fh); font-weight: 800; font-size: clamp(18px, 2.4vw, 21px); line-height: 1.25; letter-spacing: -.01em; transition: border-color .2s ease, background-color .2s ease; }
+a:hover { border-color: rgba(var(--acc-rgb), .55); background: var(--card2); }
+a:focus-visible { outline: 3px solid var(--acc); outline-offset: 3px; }
+@media (prefers-reduced-motion: reduce) { a { transition: none; } }
+</style>
+</head>
+<body>
+<main>
+  <h1>MedCai — prévia das páginas de venda</h1>
+  <p class="aviso">Prévia para revisão. Não divulgar.</p>
+  <ol>
+    <li><a href="p1-versao-b.html">Secretária IA</a></li>
+    <li><a href="p2-versao-c.html">Secretária IA + tráfego</a></li>
+    <li><a href="p3-versao-c.html">Secretária IA + tráfego + site completo</a></li>
+    <li><a href="p4-versao-c.html">Os 3 planos</a></li>
+    <li><a href="p5-versao-c.html">Secretária IA com ou sem tráfego</a></li>
+  </ol>
+</main>
+</body>
+</html>

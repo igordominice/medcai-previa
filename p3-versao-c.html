@@ -1,0 +1,1619 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Secretária IA + tráfego + site completo — MedCai</title>
+<meta name="description" content="A MedCai constrói um site para a sua especialidade, cuida dos seus anúncios no Google, no Instagram e em outras plataformas, conforme a sua escolha, e coloca a Secretária IA para atender cada paciente no WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link id="fontes" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&family=Epilogue:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style id="base">
+/* ===== Base comum às versões (texto: roteiros/texto-p3.md) ===== */
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body { margin: 0; overflow-x: clip; }
+img { max-width: 100%; height: auto; display: block; }
+h1, h2, h3, p, ul, ol, figure { margin: 0; }
+ul, ol { padding: 0; list-style: none; }
+a { color: inherit; }
+button { font: inherit; }
+.wrap { width: 100%; max-width: 1200px; margin: 0 auto; padding-inline: 20px; }
+.ico { width: 20px; height: 20px; flex: none; }
+.js-motion [data-reveal] { opacity: 0; transform: translateY(20px); transition: opacity .7s ease, transform .7s cubic-bezier(.2,.8,.2,1); }
+.js-motion [data-reveal].in { opacity: 1; transform: none; }
+.btn.fixo { position: fixed; right: 16px; bottom: 16px; z-index: 90; transform: translateY(170%); transition: transform .35s cubic-bezier(.2,.8,.2,1); }
+.btn.fixo.on { transform: none; }
+@media (min-width: 900px) { .btn.fixo { display: none; } }
+.pulse { position: relative; }
+.pulse::after { content: ""; position: absolute; inset: 0; border-radius: inherit; pointer-events: none; }
+.pulse.vis::after { animation: anel 3.8s ease-out infinite; }
+@keyframes anel { 0% { box-shadow: 0 0 0 0 var(--anel, rgba(37,211,102,.5)); } 38%, 100% { box-shadow: 0 0 0 15px rgba(0,0,0,0); } }
+@media (prefers-reduced-motion: reduce) { .pulse.vis::after { animation: none; } .btn.fixo { transition: none; } }
+</style>
+<style id="tema">
+/* ===== Versão C — preto + dourado, títulos em Montserrat 800 (Montserrat + Epilogue) =====
+   Todas as cores e as fontes estão nas variáveis abaixo (= configurações globais do Elementor). Mesmo :root da P2 C. */
+:root {
+  --bg: #0C0B09; --bg-rgb: 12,11,9; --bg2: #110F0C; --bg3: #080706; --card: #17140F; --card2: #1C1812; --line: #2F2920;
+  --acc: #E2B657; --acc-2: #F0CD7E; --acc-rgb: 226,182,87; --on-acc: #0C0B09;
+  --brand: #8C6A2A; --brand-2: #E2B657; --glow-rgb: 196,150,62; --glow2-rgb: 226,182,87;
+  --num2: #EBD9AE; --ruim: #E0898A; --marcador: #F49A6B;
+  --tx: #F5EFE2; --tx2: #BFB5A3; --tx3: #8F8676; --tx-h: #FBF6EA; --tx-li: #EDE4D3;
+  --fh: "Montserrat", Arial, sans-serif; --fb: "Epilogue", system-ui, sans-serif;
+  --fh-w: 800; --fh-tt: none; --fh-lh: 1.1; --fh-ls: -.02em;
+  --h1-m: clamp(28px, 9vw, 46px); --h1-d: clamp(40px, 3.6vw, 52px); --h2: clamp(28px, 3.6vw, 46px); --h2-cta: clamp(30px, 4vw, 50px); --h3-t: clamp(22px, 2.2vw, 28px);
+  --raio: 12px; --raio-g: 16px; --raio-bt: 10px;
+  --hero-bg: radial-gradient(50% 55% at 75% 35%, rgba(196,150,62,.20) 0%, transparent 70%), radial-gradient(40% 45% at 5% 95%, rgba(226,182,87,.08) 0%, transparent 70%);
+  --hero-bg-size: auto, auto;
+  --destaque: linear-gradient(var(--card2), var(--card2)) padding-box, linear-gradient(rgba(226,182,87,.55), rgba(226,182,87,.55)) border-box;
+  --sombra-destaque: 0 20px 50px rgba(0,0,0,.35);
+  --escura-bg: radial-gradient(50% 60% at 85% 0%, rgba(196,150,62,.14) 0%, transparent 70%);
+  --painel-bg: radial-gradient(60% 55% at 50% 100%, rgba(196,150,62,.14) 0%, transparent 70%);
+  --cta-bg: radial-gradient(70% 90% at 50% 0%, rgba(226,182,87,.16) 0%, transparent 70%), #14110C; --cta-tx: #EDE4D3; --cta-brilho: rgba(226,182,87,.10);
+  --preco-r-bg: #1F1A12;
+  --marca-bg: #E2B657; --marca-tx: #0C0B09; --marca-sombra: none;
+  --anel: rgba(226,182,87,.5);
+  --w-frame: #050403; --w-acc: #5B4513; --w-acc-l: #F5EBD2; --w-acc-tx: #6E5214; --w-seal: #E2B657; --w-seal-tx: #0C0B09; --w-cap: #BFB5A3; --w-site: #0E766E;
+  --w-upd: #4D7C0F; --w-upd-l: #F0F9D2; --w-sup: #B45309; --w-sup-l: #FFF1DC;
+  --p-bg: #0C0B09; --p-card: #17140F; --p-line: #2F2920; --p-acc: #E2B657; --p-acc-bg: #2A2312; --p-amber: #8CC2B0; --p-tx: #F5EFE2; --p-tx2: #BFB5A3;
+  --p-bezel: #1C1812; --p-bezel-b: #3A3226;
+}
+body { font-family: var(--fb); color: var(--tx); background: var(--bg); font-size: 16.5px; line-height: 1.65; }
+h1, h2 { font-family: var(--fh); font-weight: var(--fh-w); color: var(--tx-h); text-transform: var(--fh-tt); letter-spacing: var(--fh-ls); line-height: var(--fh-lh); text-wrap: balance; }
+h3 { font-family: var(--fb); font-weight: 800; color: var(--tx-h); line-height: 1.3; }
+:focus-visible { outline: 3px solid var(--acc); outline-offset: 3px; border-radius: 6px; }
+.rotulo { display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px; border: 1px solid rgba(var(--acc-rgb),.45); border-radius: 100px;
+          font-weight: 700; font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--acc); background: rgba(var(--acc-rgb),.06); }
+@media (max-width: 420px) { .cab p.rotulo { font-size: 16px; letter-spacing: .08em; } } /* rótulos longos cabem numa linha no celular */
+
+/* botões */
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 56px; padding: 17px 28px; border-radius: var(--raio-bt); border: 0; cursor: pointer;
+       font-family: var(--fb); font-weight: 800; font-size: 15px; letter-spacing: .04em; text-transform: uppercase; text-decoration: none; transition: transform .15s ease, background-color .2s ease, box-shadow .2s ease; }
+.btn:hover { transform: translateY(-2px); }
+.btn-wa { background: var(--acc); color: var(--on-acc); box-shadow: 0 12px 34px rgba(var(--acc-rgb),.25); }
+.btn-wa:hover { background: var(--acc-2); box-shadow: 0 14px 40px rgba(var(--acc-rgb),.38); }
+.btn-ghost { background: rgba(255,255,255,.04); color: var(--tx-h); border: 1px solid rgba(255,255,255,.22); }
+.btn-ghost:hover { background: rgba(255,255,255,.09); }
+.btn-sm { min-height: 44px; padding: 11px 16px; font-size: 12.5px; }
+.btn .ico { width: 19px; height: 19px; fill: currentColor; }
+
+/* cabeçalho */
+.nav { position: sticky; top: 0; z-index: 80; background: rgba(var(--bg-rgb),.82); -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px); border-bottom: 1px solid var(--line); }
+.nav-in { min-height: 66px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.marca { display: inline-flex; align-items: center; gap: 10px; font-weight: 800; font-size: 19px; color: var(--tx-h); text-decoration: none; }
+.marca-m { width: 34px; height: 34px; border-radius: 10px; background: var(--marca-bg); color: var(--marca-tx); display: grid; place-items: center; font-size: 17px; font-weight: 800; box-shadow: var(--marca-sombra); }
+
+/* 1 · abertura */
+.hero { position: relative; overflow: hidden; padding: clamp(48px, 7vw, 96px) 0 clamp(60px, 8vw, 104px); background-color: var(--bg); background-image: var(--hero-bg); background-size: var(--hero-bg-size); }
+.hero-grid { display: grid; gap: 48px; align-items: center; }
+.hero h1 { font-size: var(--h1-m); margin-top: 22px; }
+.hero-sub { margin-top: 22px; font-size: clamp(17px, 1.5vw, 19px); color: var(--tx2); max-width: 580px; }
+.hero-cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
+.hero-cta .btn { flex: 1 1 240px; }
+.selos { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 30px; }
+.selos li { display: inline-flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 500; color: var(--tx-h); padding: 8px 14px; border-radius: 100px; background: rgba(255,255,255,.05); border: 1px solid var(--line); }
+.selos .ico { width: 16px; height: 16px; color: var(--acc); }
+.hero-prova { margin-top: 26px; max-width: 560px; padding-left: 14px; border-left: 2px solid var(--acc); font-size: 14.5px; line-height: 1.55; color: var(--tx2); }
+.hero-prova b { color: var(--acc); font-weight: 800; }
+.hero-demo { display: flex; justify-content: center; position: relative; }
+.hero-demo::before { content: ""; position: absolute; width: 70%; aspect-ratio: 1; top: 12%; border-radius: 50%; background: radial-gradient(circle, rgba(var(--glow-rgb),.55), transparent 65%); filter: blur(8px); }
+.hero-demo > .mcw { position: relative; }
+@media (min-width: 960px) { .hero-grid { grid-template-columns: 1.2fr .8fr; gap: 56px; } .hero h1 { font-size: var(--h1-d); } .hero-cta .btn { flex: 0 0 auto; } }
+
+/* seções */
+.sec { padding: clamp(72px, 10vw, 128px) 0; position: relative; }
+.sec-alt { background: var(--bg2); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.cab { max-width: 820px; }
+.cab h2 { font-size: var(--h2); margin-top: 20px; }
+.cab p { margin-top: 18px; font-size: 18px; color: var(--tx2); }
+.centro { margin-inline: auto; text-align: center; }
+/* cabeçalho centrado das seções de uma coluna: título na largura do contêiner, texto até ~62ch */
+.cab.cab-c { max-width: none; margin-inline: auto; text-align: center; }
+.cab.cab-c > p { max-width: 62ch; margin-inline: auto; }
+
+/* 2 · gargalo (cartões ✕/✓) */
+.cmp { display: grid; gap: 16px; margin-top: 40px; }
+@media (min-width: 900px) { .cmp { grid-template-columns: 1fr 1fr; } }
+.cmp-col { border-radius: calc(var(--raio) + 4px); padding: clamp(24px, 3.4vw, 38px); background: var(--card); border: 1px solid var(--line); }
+.cmp-col.bom { border: 1px solid transparent; background: var(--destaque); box-shadow: var(--sombra-destaque); }
+.cmp-tag { display: inline-block; font-size: 11.5px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; padding: 6px 12px; border-radius: 100px; background: rgba(255,255,255,.06); color: var(--tx3); }
+.bom .cmp-tag { background: rgba(var(--acc-rgb),.12); color: var(--acc); }
+.cmp-col h3 { font-family: var(--fh); font-weight: var(--fh-w); text-transform: var(--fh-tt); font-size: var(--h3-t); line-height: var(--fh-lh); letter-spacing: var(--fh-ls); text-wrap: balance; margin-top: 16px; }
+.ruim h3 { color: var(--tx2); }
+.cmp-list { display: grid; gap: 14px; margin-top: 20px; }
+.cmp-list li { display: flex; gap: 12px; font-size: 16px; line-height: 1.5; }
+.ruim .cmp-list li { color: var(--tx3); }
+.bom .cmp-list li { color: var(--tx-li); }
+.cmp-list .ico { width: 20px; height: 20px; margin-top: 2px; }
+.ruim .ico { color: var(--ruim); }
+.bom .ico { color: var(--acc); }
+
+/* passos, com a prova de cada um */
+.passos { display: grid; gap: 12px; margin-top: 40px; max-width: 860px; margin-inline: auto; }
+.passo { position: relative; background: var(--card); border: 1px solid var(--line); border-left: 4px solid var(--brand); border-radius: var(--raio); padding: 22px 24px; }
+.passo-n { font-family: var(--fh); font-weight: var(--fh-w); font-size: 26px; letter-spacing: .03em; line-height: 1; color: var(--brand-2); }
+.passo h3 { font-size: 19px; margin-top: 10px; }
+.passo > p { margin-top: 6px; color: var(--tx2); font-size: 15.5px; }
+.passo .prova { display: flex; gap: 10px; margin-top: 14px; padding: 12px 14px; border-radius: 10px; background: rgba(var(--acc-rgb),.07); font-size: 14.5px; line-height: 1.55; color: var(--tx-li); }
+.passo .prova .ico { width: 18px; height: 18px; color: var(--acc); margin-top: 2px; }
+
+/* itens com ícone */
+.recursos { display: grid; gap: 12px; margin-top: 40px; }
+.recurso { display: grid; grid-template-columns: auto 1fr; column-gap: 16px; background: var(--card); border: 1px solid var(--line); border-radius: calc(var(--raio) + 2px); padding: 22px; }
+.recurso-ico { grid-row: span 2; width: 46px; height: 46px; border-radius: 50%; background: rgba(var(--acc-rgb),.12); color: var(--acc); display: grid; place-items: center; }
+.recurso-ico .ico { width: 22px; height: 22px; }
+.recurso h3 { font-size: 18px; align-self: center; }
+.recurso p { margin-top: 4px; color: var(--tx2); font-size: 15.5px; }
+@media (min-width: 900px) { .recursos { grid-template-columns: 1fr 1fr; gap: 16px; } }
+
+/* caso */
+.caso-grid { display: grid; gap: 32px; align-items: start; }
+.foto { width: 190px; aspect-ratio: 1; object-fit: cover; border-radius: calc(var(--raio) + 8px); border: 2px solid var(--brand); box-shadow: 0 0 0 6px rgba(var(--glow-rgb),.18), 0 24px 60px rgba(var(--glow-rgb),.35); background: var(--card); }
+.caso-nums { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 30px; }
+.caso-nums li { background: var(--card); border: 1px solid var(--line); border-radius: var(--raio); padding: 18px; }
+.caso-nums b { display: block; font-family: var(--fh); font-weight: var(--fh-w); font-size: clamp(36px, 4vw, 52px); line-height: 1; color: var(--acc); font-variant-numeric: tabular-nums; }
+.caso-nums span { display: block; margin-top: 8px; font-size: 14px; color: var(--tx2); line-height: 1.45; }
+.caso-nums small { display: block; margin-top: 8px; font-size: 12.5px; color: var(--tx3); letter-spacing: .02em; }
+.caso-linha { margin-top: 22px; font-weight: 700; color: var(--tx-h); }
+.caso-txt { margin-top: 10px; color: var(--tx2); }
+.caso-cont .btn { margin-top: 28px; }
+@media (min-width: 960px) { .caso-grid { grid-template-columns: 340px 1fr; gap: 64px; } .foto { width: 100%; } .caso-nums { gap: 16px; } }
+.per { margin-top: 26px; font-size: 14.5px; color: var(--tx2); }
+.lado-grid { display: grid; gap: 40px; align-items: center; }
+.define { margin-top: 22px; display: grid; gap: 10px; }
+.define li { display: flex; gap: 10px; font-size: 16px; color: var(--tx2); }
+.define .ico { width: 18px; height: 18px; color: var(--acc); margin-top: 4px; }
+@media (min-width: 960px) { .lado-grid { grid-template-columns: 1.1fr .9fr; gap: 64px; } }
+.linha-final { margin-top: 18px; font-size: 17px; font-weight: 700; color: var(--tx-h); }
+
+/* cartões numerados "( 01 )" */
+.sec-escura { background-color: var(--bg3); background-image: var(--escura-bg); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.limites { display: grid; gap: 12px; margin-top: 40px; }
+.limites li { background: var(--card); border: 1px solid var(--line); border-radius: var(--raio); padding: 24px; }
+.limites .n { font-family: var(--fh); font-weight: var(--fh-w); font-size: 20px; color: var(--brand-2); letter-spacing: .04em; }
+.limites h3 { font-size: 18px; margin-top: 10px; }
+.limites p { margin-top: 6px; color: var(--tx2); font-size: 15.5px; }
+@media (min-width: 700px) { .limites { grid-template-columns: 1fr 1fr; } }
+
+/* painel */
+.painel-demo { margin-top: 44px; }
+.legenda { margin-top: 16px; font-size: 14px; color: var(--tx3); text-align: center; }
+@media (max-width: 599px) { .painel-demo { margin-inline: -20px; } }
+
+/* preço */
+.preco-card { max-width: 900px; margin: 44px auto 0; border-radius: calc(var(--raio) + 8px); overflow: hidden; display: grid; border: 1px solid transparent;
+              background: linear-gradient(var(--card), var(--card)) padding-box, linear-gradient(135deg, var(--brand), var(--acc)) border-box; box-shadow: 0 30px 80px rgba(var(--glow-rgb),.3); }
+.preco-l { padding: clamp(28px, 4vw, 46px); }
+.preco-l .cmp-tag { background: rgba(var(--acc-rgb),.12); color: var(--acc); }
+.preco-l h3 { font-family: var(--fh); font-weight: var(--fh-w); text-transform: var(--fh-tt); font-size: 34px; line-height: var(--fh-lh); letter-spacing: var(--fh-ls); text-wrap: balance; margin-top: 14px; }
+.preco-l > p { margin-top: 10px; color: var(--tx2); }
+.incl { display: grid; gap: 12px; margin-top: 22px; }
+.incl li { display: flex; gap: 10px; font-size: 15.5px; color: var(--tx-li); }
+.incl .ico { width: 18px; height: 18px; color: var(--acc); margin-top: 3px; }
+.preco-r { padding: clamp(28px, 4vw, 46px); display: flex; flex-direction: column; justify-content: center; text-align: center; background: var(--preco-r-bg); }
+.preco-val { font-family: var(--fh); font-weight: var(--fh-w); font-size: clamp(42px, 4.4vw, 56px); line-height: 1; color: var(--acc); white-space: nowrap; }
+.preco-per { margin-top: 6px; color: var(--tx2); font-weight: 700; text-transform: uppercase; letter-spacing: .1em; font-size: 13px; }
+.preco-extra { margin-top: 14px; font-size: 14.5px; font-weight: 700; color: var(--tx-h); text-wrap: balance; }
+.preco-r .btn { margin-top: 26px; }
+.preco-nota { margin-top: 18px; font-size: 13.5px; color: var(--tx2); line-height: 1.55; }
+@media (min-width: 900px) { .preco-card { grid-template-columns: 1.15fr .85fr; } }
+
+/* perguntas */
+.faq { max-width: 860px; margin: 40px auto 0; display: grid; gap: 10px; }
+.faq details { background: var(--card); border: 1px solid var(--line); border-radius: calc(var(--raio) - 2px); padding: 0 20px; }
+.faq details[open] { border-color: rgba(var(--glow2-rgb),.55); }
+.faq summary { cursor: pointer; list-style: none; display: flex; justify-content: space-between; gap: 16px; align-items: flex-start; padding: 20px 0; font-weight: 700; font-size: 17px; color: var(--tx-h); min-height: 44px; }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: "+"; flex: none; width: 30px; height: 30px; border-radius: 8px; background: rgba(var(--acc-rgb),.12); color: var(--acc); display: grid; place-items: center; font-size: 20px; line-height: 1; transition: transform .2s ease; }
+.faq details[open] summary::after { transform: rotate(45deg); }
+.faq details p { padding: 0 0 22px; color: var(--tx2); font-size: 15.5px; line-height: 1.65; }
+
+/* chamada final */
+.cta-final { text-align: center; padding: clamp(72px, 10vw, 120px) 0; background: var(--cta-bg); position: relative; overflow: hidden; }
+.cta-final::before { content: ""; position: absolute; inset: -40% 20% auto; height: 120%; background: radial-gradient(circle, var(--cta-brilho), transparent 60%); pointer-events: none; }
+.cta-final .wrap { position: relative; }
+.cta-final h2 { font-size: var(--h2-cta); max-width: 900px; margin-inline: auto; }
+.cta-final p { margin: 20px auto 0; max-width: 640px; color: var(--cta-tx); font-size: 17.5px; }
+.cta-final .btn { margin-top: 32px; }
+
+/* rodapé */
+.rodape { background: var(--bg3); color: var(--tx3); padding: 44px 0; font-size: 13px; border-top: 1px solid var(--line); }
+.rodape .marca { color: var(--tx-h); }
+.rodape p { margin-top: 12px; }
+.marcador { color: var(--marcador); font-weight: 700; }
+.fixo { box-shadow: 0 14px 34px rgba(0,0,0,.5); }
+</style>
+<style id="detalhes">
+/* ===== Versão C — detalhes de estilo: filete dourado no rótulo, bordas finas, sem brilho colorido ===== */
+.rotulo, .cab p.rotulo { border: 0; background: none; padding: 0; border-radius: 0; gap: 12px; font-size: 12.5px; letter-spacing: .16em; color: var(--acc); }
+.rotulo::before { content: ""; width: 28px; height: 1px; background: currentColor; }
+.cab-c .rotulo::after, .centro .rotulo::after { content: ""; width: 28px; height: 1px; background: currentColor; }
+.caso-nums b, .preco-val, .passo-n, .limites .n { font-variant-numeric: lining-nums tabular-nums; }
+.passo { border-left-width: 2px; }
+.passo-n { font-size: 22px; letter-spacing: .02em; }
+.cmp-col.bom { box-shadow: none; }
+.btn { letter-spacing: .06em; }
+.btn-wa, .btn-wa:hover { box-shadow: none; }
+.selos li { background: transparent; }
+.recurso-ico, .faq summary::after { background: rgba(var(--acc-rgb),.10); }
+.faq details[open] { border-color: rgba(var(--acc-rgb),.45); }
+.foto { border-width: 1px; box-shadow: 0 24px 60px rgba(0,0,0,.45); }
+.preco-card { box-shadow: 0 30px 80px rgba(0,0,0,.45); }
+.cta-final { border-top: 1px solid rgba(var(--acc-rgb),.3); border-bottom: 1px solid rgba(var(--acc-rgb),.3); }
+.caso-nums b { font-size: clamp(34px, 3.6vw, 48px); }
+.preco-l h3 { font-size: 30px; }
+.preco-val { font-size: clamp(34px, 10vw, 42px); }
+</style>
+<style id="p3">
+/* ===== P3 — componentes próprios desta página (mesmas variáveis do tema) ===== */
+@media (max-width: 420px) { .hero .rotulo { font-size: 11.5px; letter-spacing: .1em; } }
+
+/* 3 · o que você recebe */
+.entregas { display: grid; gap: 12px; margin-top: 40px; }
+.entregas li { background: var(--card); border: 1px solid var(--line); border-radius: calc(var(--raio) + 2px); padding: 26px 24px; }
+.entregas h3 { font-size: 19px; margin-top: 18px; }
+.entregas p { margin-top: 8px; color: var(--tx2); font-size: 15.5px; }
+@media (min-width: 700px) { .entregas { grid-template-columns: 1fr 1fr; gap: 16px; } }
+@media (min-width: 1100px) { .entregas { grid-template-columns: repeat(4, 1fr); } }
+
+/* 4 · caso: "1 em cada 5" numa linha; um cartão por linha no celular */
+.caso-nums b.frase { font-size: clamp(30px, 3vw, 40px); white-space: nowrap; }
+@media (max-width: 559px) { .caso-nums.um { grid-template-columns: 1fr; } }
+
+/* 5 · o site */
+.tipos { display: grid; gap: 8px; margin-top: 28px; }
+.tipos li { display: flex; gap: 12px; padding: 11px 14px; border: 1px solid var(--line); border-radius: 10px; background: var(--card); font-size: 15.5px; line-height: 1.5; color: var(--tx-li); }
+.tipos .ico { width: 18px; height: 18px; color: var(--acc); margin-top: 2px; }
+.site-demo { display: flex; justify-content: center; position: relative; }
+.site-demo::before { content: ""; position: absolute; width: 70%; aspect-ratio: 1; top: 15%; border-radius: 50%; background: radial-gradient(circle, rgba(var(--glow-rgb),.4), transparent 65%); }
+.site-demo > .mcs { position: relative; }
+
+/* 6 · Google */
+.lista-g { max-width: 860px; margin: 40px auto 0; background: var(--card); border: 1px solid var(--line); border-radius: calc(var(--raio) + 4px); padding: 6px 24px; }
+.lista-g li { display: flex; gap: 14px; padding: 16px 0; font-size: 16px; line-height: 1.5; color: var(--tx-li); }
+.lista-g li + li { border-top: 1px solid var(--line); }
+.lista-g .ico { width: 20px; height: 20px; color: var(--acc); margin-top: 2px; }
+
+/* 7 · inteligências artificiais */
+.cab p.ia-txt b { color: var(--acc); }
+.ia-card { border-radius: var(--raio-g); padding: clamp(28px, 4vw, 44px); border: 1px solid transparent; background: var(--destaque); text-align: center; }
+.ia-num { display: block; font-family: var(--fh); font-weight: var(--fh-w); font-size: clamp(76px, 9vw, 120px); line-height: 1; color: var(--acc); font-variant-numeric: lining-nums tabular-nums; }
+.ia-lb { display: block; margin-top: 12px; font-weight: 700; font-size: 17px; color: var(--tx-h); }
+.ia-chips { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-top: 20px; }
+.ia-chips li { padding: 6px 14px; border-radius: 100px; border: 1px solid rgba(var(--acc-rgb),.35); font-size: 14px; font-weight: 600; color: var(--tx-li); }
+.ia-per { margin-top: 16px; font-size: 12.5px; color: var(--tx3); letter-spacing: .02em; }
+
+/* 8 · velocidade */
+.vel { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.vel > li { background: var(--card); border: 1px solid var(--line); border-radius: var(--raio); padding: 22px 18px; text-align: center; }
+.gauge { --v: 100; width: 112px; aspect-ratio: 1; margin: 0 auto; border-radius: 50%; display: grid; place-items: center; position: relative;
+         background: conic-gradient(var(--acc) calc(var(--v) * 1%), rgba(var(--acc-rgb),.14) 0); }
+.gauge::before { content: ""; position: absolute; inset: 8px; border-radius: 50%; background: var(--card); }
+.gauge b { position: relative; font-family: var(--fh); font-weight: var(--fh-w); font-size: 38px; line-height: 1; color: var(--acc); font-variant-numeric: lining-nums tabular-nums; }
+.vel > li > p { margin-top: 14px; font-size: 14.5px; line-height: 1.5; color: var(--tx2); }
+.vel > li.cel { grid-column: 1 / -1; text-align: left; border: 1px solid transparent; background: var(--destaque); padding: 24px; }
+.cel h3 { font-family: var(--fh); font-weight: var(--fh-w); font-size: 22px; line-height: var(--fh-lh); letter-spacing: var(--fh-ls); }
+.cel-dado { margin-top: 16px; }
+.cel-dado b { display: block; font-family: var(--fh); font-weight: var(--fh-w); font-size: clamp(34px, 3.6vw, 48px); line-height: 1; color: var(--acc); font-variant-numeric: lining-nums tabular-nums; }
+.cel-dado span { display: block; margin-top: 8px; font-size: 15px; line-height: 1.45; color: var(--tx-li); }
+.cel-dado small { display: block; margin-top: 6px; font-size: 12.5px; color: var(--tx3); letter-spacing: .02em; }
+.cel .define { margin-top: 16px; }
+.cel .define li { color: var(--tx-li); font-size: 15px; }
+
+/* 9 · medição: o 7.º cartão na linha inteira */
+@media (min-width: 900px) { .recursos .inteira { grid-column: 1 / -1; } }
+
+/* 11 · manutenção: 3 por linha no computador */
+@media (min-width: 1100px) { .limites.seis { grid-template-columns: repeat(3, 1fr); gap: 16px; } }
+
+/* 12 · a secretária e os anúncios */
+.blocos { display: grid; gap: 16px; margin-top: 40px; }
+@media (min-width: 960px) { .blocos { grid-template-columns: 1fr 1fr; } }
+
+/* 6 · uma página para cada doença e cada procedimento */
+.sec-linha { border-bottom: 1px solid var(--line); }
+.nb-demo { margin-top: 44px; }
+@media (max-width: 599px) { .nb-demo { margin-inline: -20px; } }
+/* abaixo de 700 px, o notebook dá lugar ao celular com o site de celular (no Elementor: visibilidade por aparelho) */
+@media (max-width: 699px) { .nb-demo .mcn { display: none; } }
+@media (min-width: 700px) { .nb-demo .mcc { display: none; } }
+.paginas-grid { display: grid; gap: 24px; margin-top: 48px; align-items: start; }
+.paginas-grid .recursos { grid-template-columns: 1fr; margin-top: 0; }
+@media (min-width: 960px) { .paginas-grid { grid-template-columns: 1fr 1fr; gap: 40px; } }
+.pg-provas { background: var(--card); border: 1px solid var(--line); border-radius: var(--raio-g); padding: clamp(22px, 3vw, 32px); }
+.pg-provas .per { margin-top: 0; }
+.pg-num { margin-top: 16px; padding-bottom: 20px; border-bottom: 1px solid var(--line); }
+.pg-num b { display: block; font-family: var(--fh); font-weight: var(--fh-w); font-size: clamp(40px, 4vw, 52px); line-height: 1; color: var(--acc); font-variant-numeric: lining-nums tabular-nums; }
+.pg-num span { display: block; margin-top: 8px; font-size: 15px; line-height: 1.45; color: var(--tx-li); }
+.pg-num small { display: block; margin-top: 6px; font-size: 12.5px; color: var(--tx3); letter-spacing: .02em; }
+.pg-linha { margin-top: 18px; font-size: 15px; line-height: 1.55; color: var(--tx2); }
+.pg-barras { display: grid; gap: 10px; margin-top: 16px; }
+.pg-barras li { display: grid; grid-template-columns: 1fr auto; gap: 4px 12px; font-size: 14px; color: var(--tx-li); }
+.pg-barras b { font-weight: 700; font-variant-numeric: tabular-nums; color: var(--tx-h); }
+.pg-barras i { grid-column: 1 / -1; display: block; height: 8px; width: var(--w); border-radius: 4px; background: var(--acc); }
+.pg-barras li.cinza, .pg-barras li.cinza b { color: var(--tx3); }
+.pg-barras li.cinza i { background: #4A4237; }
+.bloco { background: var(--card); border: 1px solid var(--line); border-radius: var(--raio-g); padding: clamp(24px, 3.4vw, 40px); }
+.bloco.dest { border: 1px solid transparent; background: var(--destaque); }
+.bloco h3 { font-family: var(--fh); font-weight: var(--fh-w); font-size: var(--h3-t); line-height: var(--fh-lh); letter-spacing: var(--fh-ls); text-wrap: balance; }
+.bloco > p { margin-top: 14px; color: var(--tx2); }
+.bloco > p.per { margin-top: 22px; font-size: 14.5px; }
+.bloco > p.linha-final { margin-top: 18px; font-size: 16.5px; font-weight: 700; color: var(--tx-h); }
+.nums-lin { display: grid; gap: 10px; margin-top: 14px; }
+.nums-lin li { display: flex; align-items: baseline; gap: 14px; padding: 14px 16px; background: var(--bg); border: 1px solid var(--line); border-radius: 10px; }
+.nums-lin b { flex: none; min-width: 3.3ch; font-family: var(--fh); font-weight: var(--fh-w); font-size: clamp(28px, 3vw, 36px); line-height: 1; color: var(--acc); font-variant-numeric: lining-nums tabular-nums; }
+.nums-lin span { font-size: 15px; line-height: 1.4; color: var(--tx2); }
+/* âncora dos botões "Quero…" do meio da página: a seção de valores começa logo abaixo do cabeçalho fixo */
+#investimento { scroll-margin-top: 67px; }
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-wa" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></symbol>
+  <symbol id="i-ok" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" d="M6.5 6.5l11 11M17.5 6.5l-11 11"/></symbol>
+  <symbol id="i-selo" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12.3l2.7 2.7L16 9.6"/></g></symbol>
+  <symbol id="i-grafico" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20h18"/><path d="M6 16v-4M11 16V7M16 16v-6"/></g></symbol>
+  <symbol id="i-busca" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5L21 21"/></g></symbol>
+  <symbol id="i-alvo" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.2"/></g></symbol>
+  <symbol id="i-frase" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3h11A2.5 2.5 0 0 1 20 5.5v8a2.5 2.5 0 0 1-2.5 2.5H10l-4.5 4v-4A2.5 2.5 0 0 1 4 13.5z"/><path d="M8.5 8h7M8.5 11.5h4.5"/></g></symbol>
+  <symbol id="i-site" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2.5"/><path d="M3 9h18M6.5 6.5h.01M9.5 6.5h.01"/></g></symbol>
+  <symbol id="i-anuncio" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10v4a1 1 0 0 0 1 1h3l6 4V5L8 9H5a1 1 0 0 0-1 1z"/><path d="M17.5 9a4 4 0 0 1 0 6"/></g></symbol>
+  <symbol id="i-ferramenta" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 6.5a4 4 0 0 0-5.2 5.2L4 17v3h3l5.3-5.3a4 4 0 0 0 5.2-5.2l-2.4 2.4-2.6-.6-.6-2.6z"/></g></symbol>
+  <symbol id="i-olho" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12z"/><circle cx="12" cy="12" r="3"/></g></symbol>
+  <symbol id="i-lista" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6h11M9 12h11M9 18h11M4.5 6h.01M4.5 12h.01M4.5 18h.01"/></g></symbol>
+  <symbol id="i-cadeado" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></g></symbol>
+  <symbol id="i-pagina" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h4"/></g></symbol>
+  <symbol id="i-seta" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" d="M12 5v14M6 13l6 6 6-6"/></symbol>
+</svg>
+
+<!-- ===== K1 · Cabeçalho ===== -->
+<header class="nav">
+  <div class="wrap nav-in">
+    <span class="marca"><span class="marca-m" aria-hidden="true">M</span>MedCai</span>
+    <a class="btn btn-wa btn-sm" href="https://wa.me/5598981706504?text=Ol%C3%A1%21%20Vim%20pela%20p%C3%A1gina%20do%20site%20completo." target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg>Falar no WhatsApp</a>
+  </div>
+</header>
+
+<main>
+
+<!-- ===== 1 · Abertura ===== -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="rotulo">Secretária IA + tráfego + site completo</p>
+      <h1>O paciente procura um especialista no&nbsp;Google às&nbsp;22h. O&nbsp;que ele&nbsp;encontra?</h1>
+      <p class="hero-sub">A MedCai constrói um site para a sua especialidade, cuida dos seus anúncios no Google, no Instagram e em outras plataformas, conforme a sua escolha, e coloca a Secretária IA para atender cada paciente no WhatsApp. Depois de pronto, o site continua cuidado, com hospedagem inclusa.</p>
+      <div class="hero-cta">
+        <a class="btn btn-wa pulse" id="cta-abertura" href="#investimento"><svg class="ico" aria-hidden="true"><use href="#i-seta"/></svg>Quero o site completo</a>
+        <a class="btn btn-ghost" href="#como">Ver como construímos o site</a>
+      </div>
+      <ul class="selos">
+        <li><svg class="ico" aria-hidden="true"><use href="#i-ok"/></svg>Com ou sem site hoje</li>
+        <li><svg class="ico" aria-hidden="true"><use href="#i-ok"/></svg>Manutenção e hospedagem inclusas</li>
+        <li><svg class="ico" aria-hidden="true"><use href="#i-ok"/></svg>Atende 24 horas, todos os dias</li>
+      </ul>
+      <p class="hero-prova">No caso do Dr. Lucas Santana, ginecologista em São Luís, o site recebeu <b>303</b> cliques para chamar no WhatsApp, de 19/10 a 18/11/2026.</p>
+    </div>
+    <div class="hero-demo">
+
+      <!-- ===== WIDGET HTML: caminho (anúncio → site → WhatsApp), com os dados da P3 ===== -->
+      <style>
+        .mcw { --teal: var(--w-acc, #0E766E); --teal-l: var(--w-acc-l, #E3F2EE); --teal-tx: var(--w-acc-tx, #0E766E); --site: var(--w-site, #0E766E); --navy: #0E172A; --bg: #F5F6F8; --line: #E6EAEF;
+               font-family: inherit; color: var(--navy); display: flex; flex-direction: column; align-items: center; gap: 14px; }
+        .mcw * { box-sizing: border-box; }
+        .mcw-phone { position: relative; width: min(320px, 86vw); aspect-ratio: 300 / 620; min-height: 0; border-radius: 50px; background: var(--w-frame, #0E172A); padding: 10px;
+                     box-shadow: 0 30px 70px rgba(0,0,0,.42), 0 0 0 1px rgba(255,255,255,.09); }
+        .mcw-phone::before, .mcw-phone::after { content: ""; position: absolute; background: rgba(255,255,255,.12); border-radius: 2px; }
+        .mcw-phone::before { left: -3px; top: 120px; width: 3px; height: 56px; }
+        .mcw-phone::after { right: -3px; top: 160px; width: 3px; height: 80px; }
+        .mcw-screen { position: relative; height: 100%; border-radius: 40px; overflow: hidden; background: #fff; }
+        .mcw-island { position: absolute; top: 10px; left: 50%; transform: translateX(-50%); width: 92px; height: 27px; border-radius: 14px; background: #000; z-index: 9; }
+        .mcw-tela { position: absolute; inset: 0; display: flex; flex-direction: column; opacity: 0; visibility: hidden; transition: opacity .45s ease, visibility 0s linear .45s; }
+        .mcw-tela.on { opacity: 1; visibility: visible; transition: opacity .45s ease; }
+        .mcw-st { height: 46px; flex: none; display: flex; align-items: center; justify-content: space-between; padding: 6px 26px 0 30px; font-weight: 600; font-size: 14px; color: var(--navy); }
+        .mcw-icons { display: flex; gap: 6px; align-items: center; }
+        .mcw-busca, .mcw-site { background: #fff; }
+        .mcw-campo { margin: 10px 14px 0; height: 44px; border-radius: 22px; border: 1px solid #DCE1E8; display: flex; align-items: center; gap: 10px; padding: 0 14px; font-size: 15px; box-shadow: 0 1px 3px rgba(14,23,42,.08); }
+        .mcw-campo svg { width: 18px; height: 18px; color: #64748B; flex: none; }
+        .mcw-cursor { width: 1.5px; height: 18px; background: var(--navy); margin-left: -8px; animation: mcwPisca 1s steps(1) infinite; }
+        .mcw-res { padding: 18px 14px; display: grid; gap: 16px; opacity: 0; transform: translateY(8px); transition: opacity .4s, transform .4s; }
+        .mcw-res.on { opacity: 1; transform: none; }
+        .mcw-ad { position: relative; padding: 12px; border-radius: 14px; border: 1px solid var(--line); background: #fff; box-shadow: 0 2px 8px rgba(14,23,42,.06); }
+        .mcw-pat { font-size: 11.5px; font-weight: 700; color: var(--navy); }
+        .mcw-ad-t { margin-top: 4px; font-size: 16px; line-height: 21px; font-weight: 600; color: #1D4ED8; }
+        .mcw-ad-d { margin-top: 4px; font-size: 13px; line-height: 18px; color: #475569; }
+        .mcw-sk { display: grid; gap: 7px; }
+        .mcw-sk i { display: block; height: 9px; border-radius: 5px; background: #EDF0F4; }
+        .mcw-sk i:nth-child(1) { width: 55%; height: 11px; background: #E2E7EE; }
+        .mcw-sk i:nth-child(2) { width: 92%; } .mcw-sk i:nth-child(3) { width: 78%; } .mcw-sk i:nth-child(4) { width: 86%; }
+        .mcw-toque { position: absolute; left: 50%; top: 50%; width: 40px; height: 40px; margin: -20px 0 0 -20px; border-radius: 50%; background: rgba(14,23,42,.25); opacity: 0; pointer-events: none; }
+        .toca > .mcw-toque { animation: mcwToque .7s ease-out both; }
+        .mcw-url { margin: 6px 14px 0; height: 34px; border-radius: 10px; background: #F1F3F6; display: flex; align-items: center; justify-content: center; gap: 6px; font-size: 13px; color: #334155; flex: none; }
+        .mcw-url svg { width: 12px; height: 12px; color: #64748B; }
+        .mcw-pg { padding: 22px 18px; display: grid; gap: 16px; }
+        .mcw-pg-top { font-size: 12px; font-weight: 700; color: var(--site); }
+        .mcw-pg-h { font-size: 26px; line-height: 30px; font-weight: 800; color: var(--navy); }
+        .mcw-pg-bt { position: relative; justify-self: start; display: inline-flex; align-items: center; height: 44px; padding: 0 18px; border-radius: 10px; background: var(--site); color: #fff; font-weight: 700; font-size: 14px; }
+        .mcw-chat { background: var(--bg); }
+        .mcw-top { background: var(--teal); color: #fff; flex: none; }
+        .mcw-top .mcw-st { color: #fff; }
+        .mcw-head { display: flex; align-items: center; gap: 10px; padding: 2px 14px 12px 8px; }
+        .mcw-back { width: 22px; height: 22px; flex: none; }
+        .mcw-av { width: 36px; height: 36px; border-radius: 50%; background: var(--teal-l); color: var(--teal); flex: none; display: grid; place-items: center; font-weight: 800; font-size: 16px; }
+        .mcw-name { font-weight: 600; font-size: 15px; line-height: 20px; }
+        .mcw-sub { font-size: 12px; line-height: 16px; height: 16px; opacity: 0; transition: opacity .2s; }
+        .mcw-sub.on { opacity: .85; }
+        .mcw-body { flex: 1; min-height: 0; overflow: hidden; display: flex; flex-direction: column; gap: 8px; padding: 12px 10px; transition: opacity .6s; }
+        .mcw-body.out { opacity: 0; }
+        .mcw-row { display: flex; flex: none; }
+        .mcw-row.in { justify-content: flex-start; }
+        .mcw-row.out { justify-content: flex-end; }
+        .mcw-b { max-width: 82%; padding: 8px 11px; font-size: 14px; line-height: 19px; border-radius: 16px; }
+        .mcw-row.in .mcw-b { background: #fff; border: 1px solid var(--line); border-top-left-radius: 4px; }
+        .mcw-row.out .mcw-b { background: var(--teal-l); border-top-right-radius: 4px; }
+        .mcw-typing .mcw-b { display: flex; gap: 4px; align-items: center; padding: 12px 14px; }
+        .mcw-dot { width: 7px; height: 7px; border-radius: 50%; background: #94A3B8; animation: mcwDot 1s infinite; }
+        .mcw-dot:nth-child(2) { animation-delay: .15s; } .mcw-dot:nth-child(3) { animation-delay: .3s; }
+        .mcw-sys { align-self: center; flex: none; display: inline-flex; align-items: center; gap: 6px; background: var(--teal-l); color: var(--teal-tx); font-weight: 700; font-size: 11px; line-height: 15px; padding: 5px 10px; border-radius: 8px; text-align: center; text-wrap: balance; }
+        .mcw-sys svg { width: 12px; height: 12px; flex: none; }
+        .mcw-pop { animation: mcwPop .35s cubic-bezier(.2,.8,.2,1) both; }
+        .mcw-input { display: flex; gap: 8px; align-items: center; padding: 8px 10px 22px; background: var(--bg); flex: none; }
+        .mcw-field { flex: 1; min-height: 36px; border-radius: 18px; background: #fff; border: 1px solid var(--line); padding: 8px 12px; font-size: 13px; line-height: 18px; color: var(--navy); }
+        .mcw-send { width: 36px; height: 36px; border-radius: 50%; background: var(--teal); display: grid; place-items: center; flex: none; }
+        .mcw-etapas { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; }
+        .mcw-etapas li { display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; border-radius: 100px; font-size: 13px; font-weight: 700; color: var(--w-cap, #475569); border: 1px solid rgba(255,255,255,.16); transition: background-color .3s, color .3s, border-color .3s; }
+        .mcw-etapas li.on { background: var(--w-seal, #0E766E); color: var(--w-seal-tx, #fff); border-color: var(--w-seal, #0E766E); }
+        .mcw-cap { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 6px 12px; font-size: 13px; color: var(--w-cap, #475569); text-align: center; text-wrap: balance; }
+        .mcw-replay { background: none; border: 1px solid currentColor; color: inherit; border-radius: 100px; padding: 5px 12px; font-size: 12.5px; font-weight: 600; cursor: pointer; min-height: 32px; }
+        @keyframes mcwPop { from { opacity: 0; transform: translateY(10px) scale(.96); } to { opacity: 1; transform: none; } }
+        @keyframes mcwDot { 0%, 60%, 100% { transform: translateY(0); opacity: .5; } 30% { transform: translateY(-4px); opacity: 1; } }
+        @keyframes mcwPisca { 50% { opacity: 0; } }
+        @keyframes mcwToque { 0% { opacity: 0; transform: scale(.4); } 30% { opacity: 1; transform: scale(1); } 100% { opacity: 0; transform: scale(1.7); } }
+        @media (prefers-reduced-motion: reduce) { .mcw-pop, .mcw-dot, .mcw-cursor, .toca > .mcw-toque { animation: none; } .mcw-tela, .mcw-tela.on, .mcw-body, .mcw-res, .mcw-etapas li { transition: none; } .mcw-replay { display: none; } }
+      </style>
+      <div class="mcw" id="mcw-caminho">
+        <div class="mcw-phone" role="img" aria-label="Exemplo do caminho do anúncio até o WhatsApp">
+          <div class="mcw-screen">
+            <div class="mcw-island"></div>
+            <div class="mcw-tela mcw-busca">
+              <div class="mcw-st"><span>22:07</span><span class="mcw-icons" aria-hidden="true"><svg width="18" height="12" viewBox="0 0 18 12" fill="currentColor"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="5" y="5" width="3" height="7" rx="1"/><rect x="10" y="2.5" width="3" height="9.5" rx="1"/><rect x="15" y="0" width="3" height="12" rx="1"/></svg><svg width="26" height="12" viewBox="0 0 26 12"><rect x="0.5" y="0.5" width="22" height="11" rx="3" fill="none" stroke="currentColor" stroke-opacity=".5"/><rect x="2" y="2" width="17" height="8" rx="2" fill="currentColor"/><rect x="23.5" y="4" width="2" height="4" rx="1" fill="currentColor" fill-opacity=".5"/></svg></span></div>
+              <div class="mcw-campo"><svg viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5L21 21"/></g></svg><span class="mcw-q">endometriose</span><i class="mcw-cursor"></i></div>
+              <div class="mcw-res">
+                <div class="mcw-ad"><div class="mcw-pat">Patrocinado</div><div class="mcw-ad-t">Endometriose · Dra. Beltrana</div><div class="mcw-ad-d">Ginecologista. Atendimento particular. Chame no WhatsApp.</div><i class="mcw-toque"></i></div>
+                <div class="mcw-sk"><i></i><i></i><i></i></div>
+                <div class="mcw-sk"><i></i><i></i><i></i></div>
+              </div>
+            </div>
+            <div class="mcw-tela mcw-site">
+              <div class="mcw-st"><span>22:07</span><span class="mcw-icons" aria-hidden="true"><svg width="18" height="12" viewBox="0 0 18 12" fill="currentColor"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="5" y="5" width="3" height="7" rx="1"/><rect x="10" y="2.5" width="3" height="9.5" rx="1"/><rect x="15" y="0" width="3" height="12" rx="1"/></svg><svg width="26" height="12" viewBox="0 0 26 12"><rect x="0.5" y="0.5" width="22" height="11" rx="3" fill="none" stroke="currentColor" stroke-opacity=".5"/><rect x="2" y="2" width="17" height="8" rx="2" fill="currentColor"/><rect x="23.5" y="4" width="2" height="4" rx="1" fill="currentColor" fill-opacity=".5"/></svg></span></div>
+              <div class="mcw-url"><svg viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></g></svg>Site da Dra. Beltrana</div>
+              <div class="mcw-pg">
+                <div class="mcw-pg-top">Dra. Beltrana · Ginecologista</div>
+                <div class="mcw-pg-h">Endometriose</div>
+                <div class="mcw-sk"><i></i><i></i><i></i><i></i></div>
+                <div class="mcw-pg-bt">Agendar pelo WhatsApp<i class="mcw-toque"></i></div>
+                <div class="mcw-sk"><i></i><i></i><i></i></div>
+              </div>
+            </div>
+            <div class="mcw-tela mcw-chat">
+              <div class="mcw-top">
+                <div class="mcw-st"><span>22:07</span><span class="mcw-icons" aria-hidden="true"><svg width="18" height="12" viewBox="0 0 18 12" fill="currentColor"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="5" y="5" width="3" height="7" rx="1"/><rect x="10" y="2.5" width="3" height="9.5" rx="1"/><rect x="15" y="0" width="3" height="12" rx="1"/></svg><svg width="26" height="12" viewBox="0 0 26 12"><rect x="0.5" y="0.5" width="22" height="11" rx="3" fill="none" stroke="currentColor" stroke-opacity=".6"/><rect x="2" y="2" width="17" height="8" rx="2" fill="currentColor"/><rect x="23.5" y="4" width="2" height="4" rx="1" fill="currentColor" fill-opacity=".6"/></svg></span></div>
+                <div class="mcw-head">
+                  <svg class="mcw-back" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>
+                  <div class="mcw-av">B</div>
+                  <div><div class="mcw-name">Consultório Dra. Beltrana</div><div class="mcw-sub">digitando…</div></div>
+                </div>
+              </div>
+              <div class="mcw-body"></div>
+              <div class="mcw-input" aria-hidden="true"><div class="mcw-field"></div><div class="mcw-send"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg></div></div>
+            </div>
+          </div>
+        </div>
+        <ol class="mcw-etapas" aria-hidden="true"><li>1 Anúncio</li><li>2 Site</li><li>3 WhatsApp</li></ol>
+        <p class="mcw-cap">Exemplo, com nomes inventados. <button type="button" class="mcw-replay">Ver de novo</button></p>
+      </div>
+      <script>
+      (function () {
+        var root = document.getElementById('mcw-caminho'); if (!root) return;
+        var telas = Array.prototype.slice.call(root.querySelectorAll('.mcw-tela')), etapas = Array.prototype.slice.call(root.querySelectorAll('.mcw-etapas li'));
+        var q = root.querySelector('.mcw-q'), res = root.querySelector('.mcw-res'), ad = root.querySelector('.mcw-ad'), bt = root.querySelector('.mcw-pg-bt');
+        var body = root.querySelector('.mcw-body'), sub = root.querySelector('.mcw-sub'), campo = root.querySelector('.mcw-field'), replay = root.querySelector('.mcw-replay');
+        var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        var BUSCA = 'endometriose', FIM = 'Pedido de agendamento enviado à equipe';
+        var falas = [
+          { t: 'out', x: 'Olá! Vim através do site da Dra. Beltrana.', origem: true },
+          { t: 'in',  x: 'Boa noite! Sou a Sofia, secretária do consultório da Dra. Beltrana. Como você prefere ser chamada?' },
+          { t: 'out', x: 'Camila. Li a página sobre endometriose e quero marcar uma consulta.' },
+          { t: 'in',  x: 'Prazer, Camila! Endometriose é um dos motivos que a Dra. Beltrana mais acompanha no consultório. Posso fazer o seu pedido de agendamento? É só me passar o seu nome completo e a data de nascimento.' },
+          { t: 'out', x: 'Camila Duarte, 03/07/1990.' },
+          { t: 'in',  x: 'Obrigada, Camila! Enviei o seu pedido de agendamento para a equipe da Dra. Beltrana. Eles verificam a melhor data e te confirmam por aqui.', fim: true }
+        ];
+        var OK = '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M5 12.5l4.5 4.5L19 7.5"/></svg>';
+        var run = 0, tocando = false, naTela = false, rolId = 0;
+        function espera(ms, id) { return new Promise(function (r) { setTimeout(function () { r(id === run); }, ms); }); }
+        function div(c) { var d = document.createElement('div'); d.className = c; return d; }
+        function balao(f, a) { var r = div('mcw-row ' + f.t + (a ? ' mcw-pop' : '')), b = div('mcw-b'); b.textContent = f.x; r.appendChild(b); return r; }
+        function sistema(a) { var s = div('mcw-sys' + (a ? ' mcw-pop' : '')); s.innerHTML = OK; s.appendChild(document.createTextNode(FIM)); return s; }
+        function desce(s) { /* rola a conversa até a última mensagem (suave, em requestAnimationFrame) */
+          var meu = ++rolId, alvo = Math.max(0, body.scrollHeight - body.clientHeight);
+          if (!s) { body.scrollTop = alvo; return; }
+          var de = body.scrollTop, t0 = performance.now();
+          (function f(t) { if (meu !== rolId) return; var k = Math.min(1, (t - t0) / 450), e = 1 - Math.pow(1 - k, 3);
+            body.scrollTop = de + (alvo - de) * e; if (k < 1) requestAnimationFrame(f); })(t0);
+        }
+        function tela(n) { telas.forEach(function (t, i) { t.classList.toggle('on', i === n); }); etapas.forEach(function (e, i) { e.classList.toggle('on', i === n); }); }
+        function estadoFinal() {
+          tela(2); etapas.forEach(function (e) { e.classList.remove('on'); });
+          q.textContent = BUSCA; res.classList.add('on'); ad.classList.remove('toca'); bt.classList.remove('toca');
+          body.classList.remove('out'); body.innerHTML = ''; sub.classList.remove('on'); campo.textContent = '';
+          falas.forEach(function (f) { body.appendChild(balao(f, false)); if (f.fim) body.appendChild(sistema(false)); }); desce(false);
+        }
+        function noFim() { if (!tocando) desce(false); }
+        async function toca() {
+          var id = ++run; tocando = true;
+          while (id === run) {
+            tela(0); q.textContent = ''; res.classList.remove('on'); ad.classList.remove('toca'); bt.classList.remove('toca');
+            body.classList.remove('out'); body.innerHTML = ''; body.scrollTop = 0; campo.textContent = ''; sub.classList.remove('on');
+            if (!await espera(700, id)) return;
+            for (var c = 1; c <= BUSCA.length; c++) { q.textContent = BUSCA.slice(0, c); if (!await espera(90, id)) return; }
+            if (!await espera(450, id)) return;
+            res.classList.add('on');
+            if (!await espera(1500, id)) return;
+            void ad.offsetWidth; ad.classList.add('toca');
+            if (!await espera(750, id)) return;
+            tela(1);
+            if (!await espera(2000, id)) return;
+            void bt.offsetWidth; bt.classList.add('toca');
+            if (!await espera(750, id)) return;
+            tela(2);
+            if (!await espera(500, id)) return;
+            campo.textContent = falas[0].x;
+            if (!await espera(1300, id)) return;
+            for (var i = 0; i < falas.length; i++) {
+              var f = falas[i];
+              if (f.t === 'in') {
+                sub.classList.add('on');
+                var dig = div('mcw-row in mcw-typing mcw-pop');
+                dig.innerHTML = '<div class="mcw-b"><span class="mcw-dot"></span><span class="mcw-dot"></span><span class="mcw-dot"></span></div>';
+                body.appendChild(dig); desce(true);
+                if (!await espera(Math.min(2200, 900 + f.x.length * 6), id)) return;
+                dig.remove(); sub.classList.remove('on');
+              }
+              if (f.origem) campo.textContent = '';
+              body.appendChild(balao(f, true)); desce(true);
+              if (f.fim) { if (!await espera(700, id)) return; body.appendChild(sistema(true)); desce(true); }
+              if (!await espera(f.fim ? 0 : (f.t === 'in' ? 1500 : 900), id)) return;
+            }
+            if (!await espera(5000, id)) return;
+            body.classList.add('out');
+            if (!await espera(700, id)) return;
+          }
+        }
+        function para() { run++; tocando = false; estadoFinal(); }
+        estadoFinal();
+        window.addEventListener('load', noFim);
+        if (document.fonts && document.fonts.ready) document.fonts.ready.then(noFim);
+        if (reduce || !('IntersectionObserver' in window)) return;
+        if (replay) replay.addEventListener('click', function () { run++; tocando = false; toca(); });
+        new IntersectionObserver(function (es) { es.forEach(function (e) { naTela = e.isIntersecting; if (naTela) { if (!tocando) toca(); } else if (tocando) para(); }); }, { threshold: 0.35 }).observe(root);
+        document.addEventListener('visibilitychange', function () { if (document.hidden) { if (tocando) para(); } else if (naTela && !tocando) toca(); });
+      })();
+      </script>
+      <!-- ===== fim do widget caminho ===== -->
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== 2 · O gargalo ===== -->
+<section class="sec">
+  <div class="wrap" data-reveal>
+    <div class="cab cab-c">
+      <p class="rotulo">O gargalo</p>
+      <h2>Um site bonito não basta. Ele precisa levar o paciente até o&nbsp;WhatsApp.</h2>
+      <p>Site, anúncios e atendimento são partes do mesmo caminho. Este plano entrega as três prontas e cuida delas depois: o site feito para a sua especialidade, os anúncios e a Secretária IA no WhatsApp do consultório.</p>
+    </div>
+    <div class="cmp">
+      <div class="cmp-col ruim">
+        <span class="cmp-tag">Site sem caminho</span>
+        <h3>O paciente lê e não sabe por onde chamar.</h3>
+        <ul class="cmp-list">
+          <li><svg class="ico" aria-hidden="true"><use href="#i-x"/></svg>Uma página só para todas as doenças e procedimentos</li>
+          <li><svg class="ico" aria-hidden="true"><use href="#i-x"/></svg>O botão do WhatsApp escondido no fim da página</li>
+          <li><svg class="ico" aria-hidden="true"><use href="#i-x"/></svg>Ninguém sabe qual página trouxe quem chamou no WhatsApp</li>
+          <li><svg class="ico" aria-hidden="true"><use href="#i-x"/></svg>O site fica parado depois de pronto</li>
+          <li><svg class="ico" aria-hidden="true"><use href="#i-x"/></svg>A mensagem das 22h fica para o dia seguinte</li>
+        </ul>
+      </div>
+      <div class="cmp-col bom">
+        <span class="cmp-tag">Com o site completo</span>
+        <h3>O site leva ao WhatsApp, e alguém responde.</h3>
+        <ul class="cmp-list">
+          <li><svg class="ico" aria-hidden="true"><use href="#i-ok"/></svg>Uma página para cada doença e cada procedimento da sua especialidade</li>
+          <li><svg class="ico" aria-hidden="true"><use href="#i-ok"/></svg>O botão do WhatsApp já na primeira tela do celular e em 7 pontos da página</li>
+          <li><svg class="ico" aria-hidden="true"><use href="#i-ok"/></svg>Cada clique registrado, com a página e o botão</li>
+          <li><svg class="ico" aria-hidden="true"><use href="#i-ok"/></svg>Manutenção e hospedagem inclusas</li>
+          <li><svg class="ico" aria-hidden="true"><use href="#i-ok"/></svg>A Secretária IA responde a qualquer hora e avisa a equipe com o pedido de agendamento pronto</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 3 · O que você recebe ===== -->
+<section class="sec sec-alt">
+  <div class="wrap" data-reveal>
+    <div class="cab cab-c">
+      <p class="rotulo">O que você recebe</p>
+      <h2>Tudo pronto, e cuidado depois de pronto</h2>
+      <p>Com ou sem site hoje. Quem já tem site recebe um novo, com os endereços antigos mantidos ou redirecionados; quem não tem começa do zero.</p>
+    </div>
+    <ul class="entregas">
+      <li><span class="recurso-ico"><svg class="ico" aria-hidden="true"><use href="#i-site"/></svg></span><h3>O site.</h3><p>Feito para a sua especialidade, com uma página para cada doença e cada cirurgia ou procedimento. Um objetivo só: levar o paciente a chamar no WhatsApp.</p></li>
+      <li><span class="recurso-ico"><svg class="ico" aria-hidden="true"><use href="#i-frase"/></svg></span><h3>A Secretária IA.</h3><p>Atende no WhatsApp do consultório, a qualquer hora, e avisa a sua equipe com o pedido de agendamento pronto. Todo botão do site leva a ela.</p></li>
+      <li><span class="recurso-ico"><svg class="ico" aria-hidden="true"><use href="#i-anuncio"/></svg></span><h3>Os anúncios.</h3><p>No Google, no Instagram e em outras plataformas, conforme a sua escolha, levando às páginas do seu site.</p></li>
+      <li><span class="recurso-ico"><svg class="ico" aria-hidden="true"><use href="#i-ferramenta"/></svg></span><h3>Manutenção e hospedagem.</h3><p>O site continua cuidado depois de pronto, com a hospedagem inclusa no preço.</p></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===== 4 · Os resultados do site do Dr. Lucas ===== -->
+<section class="sec" id="caso">
+  <div class="wrap caso-grid" data-reveal>
+    <img class="foto" src="assets/dr-lucas-foto.webp" width="800" height="800" alt="Dr. Lucas Santana" loading="lazy" decoding="async">
+    <div class="caso-cont">
+      <div class="cab">
+        <p class="rotulo">O caso</p>
+        <h2>Os resultados do site do Dr.&nbsp;Lucas Santana</h2>
+        <p>Ginecologista em São Luís. O site novo está no ar desde 19/10/2026.</p>
+      </div>
+      <ul class="caso-nums um">
+        <li><b data-count="303">303</b><span>cliques para chamar no WhatsApp</span><small>de 19/10 a 18/11/2026</small></li>
+        <li><b class="frase">1 em cada 5</b><span>visitas terminou num clique no WhatsApp (154 de 827, 18,6%)</span><small>de 31/10 a 18/11/2026</small></li>
+        <li><b data-count="26">26</b><span>contatos pelo WhatsApp vindos de anúncios no Google</span><small>de 19/10 a 18/11/2026</small></li>
+        <li><b data-count="161">161</b><span>visitas ao site vindas de anúncio</span><small>de 31/10 a 18/11/2026</small></li>
+      </ul>
+      <p class="caso-linha">Dos 303 cliques, 123 vieram pela página do link do Instagram, 102 pela página inicial e 25 pela página de histeroscopia.</p>
+      <p class="caso-txt">Clique é o toque no botão do WhatsApp do site. Contato é o clique de quem chegou por um anúncio. A consulta fica marcada quando a equipe confirma a data.</p>
+      <a class="btn btn-wa" href="#investimento"><svg class="ico" aria-hidden="true"><use href="#i-seta"/></svg>Quero o site completo</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 5 · O site ===== -->
+<section class="sec sec-alt">
+  <div class="wrap lado-grid" data-reveal>
+    <div>
+      <div class="cab">
+        <p class="rotulo">O site</p>
+        <h2>Um site que leva o paciente ao&nbsp;WhatsApp</h2>
+        <p>Cada tipo de página tem uma função. As páginas de doença e de procedimento são páginas de venda: sem menu, com uma saída só, o botão do WhatsApp.</p>
+      </div>
+      <ul class="tipos">
+        <li><svg class="ico" aria-hidden="true"><use href="#i-pagina"/></svg>Página inicial, com menu, avaliações reais do Google e a vitrine de todas as páginas</li>
+        <li><svg class="ico" aria-hidden="true"><use href="#i-pagina"/></svg>Uma página para cada doença</li>
+        <li><svg class="ico" aria-hidden="true"><use href="#i-pagina"/></svg>Uma página para cada cirurgia ou procedimento</li>
+        <li><svg class="ico" aria-hidden="true"><use href="#i-pagina"/></svg>Versão para outra cidade, se você atende em mais de uma</li>
+        <li><svg class="ico" aria-hidden="true"><use href="#i-pagina"/></svg>Página do link do Instagram</li>
+        <li><svg class="ico" aria-hidden="true"><use href="#i-pagina"/></svg>Página para anúncios</li>
+        <li><svg class="ico" aria-hidden="true"><use href="#i-pagina"/></svg>Política de privacidade, de acordo com a LGPD</li>
+      </ul>
+      <ul class="define">
+        <li><svg class="ico" aria-hidden="true"><use href="#i-ok"/></svg>O botão do WhatsApp já na primeira tela do celular</li>
+        <li><svg class="ico" aria-hidden="true"><use href="#i-ok"/></svg>Botão fixo do WhatsApp no celular</li>
+        <li><svg class="ico" aria-hidden="true"><use href="#i-ok"/></svg>Botões em 7 pontos da página</li>
+        <li><svg class="ico" aria-hidden="true"><use href="#i-ok"/></svg>Os textos do site não citam IA; só a política de privacidade, como a LGPD pede</li>
+      </ul>
+      <p class="hero-prova">O site do Dr. Lucas Santana, ginecologista em São Luís, tem <b>30</b> páginas (conferidas em 18/11/2026).</p>
+    </div>
+    <div class="site-demo">
+
+      <!-- ===== WIDGET HTML: site no celular (imagem fixa, sem animação) ===== -->
+      <style>
+        .mcs { display: flex; flex-direction: column; align-items: center; gap: 14px; }
+        .mcs * { box-sizing: border-box; }
+        .mcs-phone { position: relative; width: min(320px, 86vw); aspect-ratio: 300 / 620; border-radius: 50px; background: var(--w-frame, #0E172A); padding: 10px;
+                     box-shadow: 0 30px 70px rgba(0,0,0,.42), 0 0 0 1px rgba(255,255,255,.09); }
+        .mcs-phone::before, .mcs-phone::after { content: ""; position: absolute; background: rgba(255,255,255,.12); border-radius: 2px; }
+        .mcs-phone::before { left: -3px; top: 120px; width: 3px; height: 56px; }
+        .mcs-phone::after { right: -3px; top: 160px; width: 3px; height: 80px; }
+        .mcs-screen { position: relative; height: 100%; border-radius: 40px; overflow: hidden; background: #F0E5E6; display: flex; flex-direction: column; }
+        .mcs-island { position: absolute; top: 10px; left: 50%; transform: translateX(-50%); width: 92px; height: 27px; border-radius: 14px; background: #000; z-index: 2; }
+        .mcs-st { height: 46px; flex: none; display: flex; align-items: center; justify-content: space-between; padding: 6px 26px 0 30px; font-weight: 600; font-size: 14px; color: #0E172A; background: #fff; }
+        .mcs-icons { display: flex; gap: 6px; align-items: center; }
+        .mcs-img { width: 100%; height: auto; flex: none; }
+        .mcs-cap { font-size: 13px; color: var(--w-cap, #475569); text-align: center; }
+      </style>
+      <figure class="mcs" id="mcs-site">
+        <div class="mcs-phone">
+          <div class="mcs-screen">
+            <div class="mcs-island"></div>
+            <div class="mcs-st" aria-hidden="true"><span>22:07</span><span class="mcs-icons"><svg width="18" height="12" viewBox="0 0 18 12" fill="currentColor"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="5" y="5" width="3" height="7" rx="1"/><rect x="10" y="2.5" width="3" height="9.5" rx="1"/><rect x="15" y="0" width="3" height="12" rx="1"/></svg><svg width="26" height="12" viewBox="0 0 26 12"><rect x="0.5" y="0.5" width="22" height="11" rx="3" fill="none" stroke="currentColor" stroke-opacity=".5"/><rect x="2" y="2" width="17" height="8" rx="2" fill="currentColor"/><rect x="23.5" y="4" width="2" height="4" rx="1" fill="currentColor" fill-opacity=".5"/></svg></span></div>
+            <img class="mcs-img" src="assets/site-dr-lucas-celular.webp" width="600" height="1178" alt="A primeira tela do site do Dr. Lucas Santana" loading="lazy" decoding="async">
+          </div>
+        </div>
+        <figcaption class="mcs-cap">A primeira tela do site do Dr. Lucas Santana.</figcaption>
+      </figure>
+      <!-- ===== fim do widget site no celular ===== -->
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== 6 · Uma página para cada doença e cada procedimento ===== -->
+<section class="sec sec-linha" id="paginas">
+  <div class="wrap" data-reveal>
+    <div class="cab cab-c">
+      <p class="rotulo">Páginas</p>
+      <h2>Uma página para cada doença e cada procedimento</h2>
+      <p>O paciente busca pelo assunto que o preocupa. Por isso, cada doença, cirurgia e procedimento ganha a sua página, preparada para as buscas daquele assunto e da sua cidade.</p>
+    </div>
+    <div class="nb-demo">
+
+      <!-- ===== WIDGET HTML: notebook (site de exemplo: página inicial, mega menu e página da doença) ===== -->
+      <style>
+        .mcn { --site: var(--w-site, #0E766E); --navy: #0E172A; --slate: #475569; --line: #E6EAEF;
+               display: flex; flex-direction: column; align-items: center; gap: 16px; width: 100%; font-family: inherit; color: var(--navy); }
+        .mcn * { box-sizing: border-box; }
+        .mcn-nb { width: min(1000px, 100%); display: flex; flex-direction: column; align-items: center; }
+        .mcn-tampa { position: relative; width: 88%; background: var(--w-frame, #0E172A); border-radius: 18px 18px 6px 6px; padding: 14px 14px 18px; box-shadow: 0 30px 70px rgba(0,0,0,.42), 0 0 0 1px rgba(255,255,255,.09); }
+        .mcn-cam { position: absolute; top: 5px; left: 50%; width: 5px; height: 5px; margin-left: -2.5px; border-radius: 50%; background: #2A2620; }
+        .mcn-tela { position: relative; width: 100%; aspect-ratio: 16 / 10; overflow: hidden; border-radius: 4px; background: #fff; }
+        .mcn-deck { position: relative; width: 100%; height: clamp(34px, 6.4vw, 66px); margin-top: -1px; background: linear-gradient(var(--p-bezel-b, #3A3226), var(--p-bezel, #1C1812)); clip-path: polygon(5% 0, 95% 0, 100% 100%, 0 100%); }
+        .mcn-teclas { position: absolute; left: 15%; right: 15%; top: 16%; height: 46%; display: grid; grid-template-columns: repeat(14, 1fr); grid-template-rows: repeat(3, 1fr); gap: 3px; }
+        .mcn-teclas i { display: block; border-radius: 2px; background: rgba(255,255,255,.07); }
+        .mcn-pad { position: absolute; left: 41%; right: 41%; bottom: 9%; height: 20%; border-radius: 3px; background: rgba(255,255,255,.06); }
+        .mcn-borda { width: 100%; height: 7px; border-radius: 0 0 9px 9px; background: #4A4237; }
+        .mcn-site { position: absolute; left: 0; top: 0; width: 960px; transform-origin: 0 0; background: #fff; }
+        .mcn-url { height: 40px; margin: 10px 14px 0; border-radius: 10px; background: #F1F3F6; display: flex; align-items: center; justify-content: center; gap: 6px; font-size: 13.5px; color: #334155; }
+        .mcn-url svg { width: 12px; height: 12px; color: #64748B; }
+        .mcn-pg { position: absolute; left: 0; right: 0; top: 54px; bottom: 0; opacity: 0; visibility: hidden; transition: opacity .4s ease, visibility 0s linear .4s; }
+        .mcn-pg.on { opacity: 1; visibility: visible; transition: opacity .4s ease; }
+        .mcn-site.out .mcn-pg { opacity: 0; }
+        .mcn-cab { display: flex; align-items: center; justify-content: space-between; gap: 18px; padding: 14px 26px; border-bottom: 1px solid var(--line); }
+        .mcn-marca b { display: block; font-size: 18px; font-weight: 800; line-height: 1.2; }
+        .mcn-marca span { display: block; font-size: 12.5px; color: var(--slate); }
+        .mcn-menu { display: flex; gap: 22px; font-size: 14.5px; font-weight: 600; }
+        .mcn-menu span { padding: 6px 0; }
+        .mcn-menu span.ativo { color: var(--site); box-shadow: inset 0 -2px 0 var(--site); }
+        .mcn-agendar { flex: none; padding: 9px 14px; border-radius: 8px; background: var(--site); color: #fff; font-weight: 700; font-size: 13.5px; }
+        .mcn-hero { display: grid; grid-template-columns: 1.3fr .7fr; gap: 28px; padding: 34px 26px; align-items: center; }
+        .mcn-sk { display: grid; gap: 10px; }
+        .mcn-sk i { display: block; height: 11px; border-radius: 6px; background: #EDF0F4; }
+        .mcn-sk i.g { height: 26px; width: 70%; background: #E2E7EE; }
+        .mcn-sk i.p { height: 38px; width: 34%; margin-top: 8px; border-radius: 10px; background: rgba(14,118,110,.25); }
+        .mcn-sk i:nth-child(2) { width: 92%; } .mcn-sk i:nth-child(3) { width: 84%; } .mcn-sk i:nth-child(4) { width: 64%; }
+        .mcn-foto { aspect-ratio: 4 / 5; border-radius: 14px; background: linear-gradient(160deg, #E8EDF2, #D3DBE4); }
+        .mcn-mega { position: absolute; left: 24px; right: 24px; top: 70px; z-index: 3; display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px 24px; padding: 22px 26px; border-radius: 12px; border: 1px solid var(--line); background: #fff;
+                    box-shadow: 0 18px 40px rgba(14,23,42,.18); opacity: 0; transform: translateY(-6px); transition: opacity .25s ease, transform .25s ease; }
+        .mcn-mega.aberto { opacity: 1; transform: none; }
+        .mcn-col { display: flex; flex-direction: column; gap: 7px; }
+        .mcn-col-t { font-size: 13px; font-weight: 800; letter-spacing: .02em; color: var(--site); margin-bottom: 4px; }
+        .mcn-it { font-size: 15px; line-height: 1.3; color: var(--navy); padding: 2px 6px; margin-left: -6px; border-radius: 6px; }
+        .mcn-it.ativo { background: rgba(14,118,110,.12); color: var(--site); font-weight: 700; }
+        .mcn-cab2 { padding: 14px 26px; border-bottom: 1px solid var(--line); }
+        .mcn-dz { display: grid; grid-template-columns: 1.2fr .8fr; gap: 28px; padding: 30px 26px; align-items: center; }
+        .mcn-autor { font-size: 12.5px; color: var(--slate); }
+        .mcn-dz-h { margin-top: 6px; font-size: 36px; line-height: 1.15; font-weight: 800; }
+        .mcn-dz .mcn-sk { margin-top: 16px; }
+        .mcn-wa { display: inline-flex; margin-top: 20px; padding: 13px 20px; border-radius: 10px; background: var(--site); color: #fff; font-weight: 700; font-size: 15px; }
+        .mcn-wa.ativo { box-shadow: 0 0 0 4px rgba(14,118,110,.22); }
+        .mcn-video { position: relative; aspect-ratio: 16 / 10; border-radius: 12px; background: #1E293B; }
+        .mcn-video::after { content: ""; position: absolute; left: 50%; top: 50%; margin: -14px 0 0 -9px; border-left: 24px solid rgba(255,255,255,.85); border-top: 14px solid transparent; border-bottom: 14px solid transparent; }
+        .mcn-cursor { position: absolute; left: 0; top: 0; z-index: 6; width: 26px; height: 26px; margin: -2px 0 0 -4px; opacity: 0; transition-property: transform, opacity; transition-timing-function: cubic-bezier(.45,.05,.25,1); pointer-events: none; }
+        .mcn-cursor.on { opacity: 1; }
+        .mcn-clique { position: absolute; left: 0; top: 0; z-index: 5; width: 34px; height: 34px; margin: -17px 0 0 -17px; border-radius: 50%; border: 2px solid var(--site); opacity: 0; pointer-events: none; }
+        .mcn-clique.on { animation: mcnClique .6s ease-out both; }
+        @keyframes mcnClique { from { opacity: .9; transform: translate(var(--x), var(--y)) scale(.4); } to { opacity: 0; transform: translate(var(--x), var(--y)) scale(1.6); } }
+        .mcn-cap { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 6px 12px; font-size: 13px; color: var(--w-cap, #475569); text-align: center; }
+        .mcn-replay { background: none; border: 1px solid currentColor; color: inherit; border-radius: 100px; padding: 5px 12px; font-size: 12.5px; font-weight: 600; cursor: pointer; min-height: 32px; }
+        /* tela estreita (celular): o notebook ocupa a largura toda e o site é desenhado em 440 px */
+        .mcn.estreito .mcn-tampa { width: 94%; padding: 8px 8px 12px; border-radius: 12px 12px 4px 4px; }
+        .mcn.estreito .mcn-tela { aspect-ratio: 10 / 9; }
+        .mcn.estreito .mcn-site { width: 440px; }
+        .mcn.estreito .mcn-url { height: 30px; margin: 8px 10px 0; font-size: 12.5px; }
+        .mcn.estreito .mcn-pg { top: 40px; }
+        .mcn.estreito .mcn-cab { flex-wrap: wrap; row-gap: 6px; padding: 10px 14px 6px; }
+        .mcn.estreito .mcn-marca b { font-size: 16px; }
+        .mcn.estreito .mcn-menu { order: 3; width: 100%; justify-content: space-between; gap: 4px; font-size: 13px; }
+        .mcn.estreito .mcn-agendar { padding: 7px 10px; font-size: 12.5px; }
+        .mcn.estreito .mcn-hero { padding: 20px 14px; gap: 16px; }
+        .mcn.estreito .mcn-mega { left: 8px; right: 8px; top: 84px; grid-template-columns: 1fr 1.3fr 1fr; grid-template-rows: auto auto; gap: 8px 12px; padding: 10px 12px; }
+        .mcn.estreito .mcn-col { gap: 3px; }
+        .mcn.estreito .mcn-col.pat, .mcn.estreito .mcn-col.cir { grid-row: span 2; }
+        .mcn.estreito .mcn-col.ant { grid-column: 3; }
+        .mcn.estreito .mcn-col-t { font-size: 12.5px; margin-bottom: 2px; }
+        .mcn.estreito .mcn-it { font-size: 12.5px; line-height: 1.25; padding: 1px 4px; margin-left: -4px; }
+        .mcn.estreito .mcn-cab2 { padding: 10px 14px; }
+        .mcn.estreito .mcn-dz { grid-template-columns: 1fr; padding: 22px 14px; }
+        .mcn.estreito .mcn-dz-h { font-size: 30px; }
+        .mcn.estreito .mcn-video { display: none; }
+        @media (prefers-reduced-motion: reduce) { .mcn-cursor, .mcn-clique, .mcn-replay { display: none; } .mcn-pg, .mcn-pg.on, .mcn-mega { transition: none; } }
+      </style>
+      <div class="mcn" id="mcn-paginas">
+        <div class="mcn-nb" role="img" aria-label="Site de exemplo, com nome inventado: a página inicial com o menu de todas as páginas e a página da doença">
+          <div class="mcn-tampa">
+            <div class="mcn-cam"></div>
+            <div class="mcn-tela">
+              <div class="mcn-site">
+                <div class="mcn-url"><svg viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></g></svg>Site da Dra. Beltrana</div>
+                <div class="mcn-pg mcn-home on">
+                  <div class="mcn-cab">
+                    <div class="mcn-marca"><b>Dra. Beltrana</b><span>Ginecologista</span></div>
+                    <div class="mcn-menu"><span>Início</span><span>Especialidades</span><span>Cirurgias</span><span data-alvo="menu">Patologias</span><span>Anticoncepção</span></div>
+                    <div class="mcn-agendar">Agendar consulta</div>
+                  </div>
+                  <div class="mcn-hero"><div class="mcn-sk"><i class="g"></i><i></i><i></i><i></i><i class="p"></i></div><div class="mcn-foto"></div></div>
+                  <div class="mcn-mega"><div class="mcn-col pat"><div class="mcn-col-t">Patologias</div><span class="mcn-it" data-alvo="endo">Endometriose</span><span class="mcn-it">Mioma</span><span class="mcn-it">Adenomiose</span><span class="mcn-it">SOP</span><span class="mcn-it">Cisto ovariano</span></div><div class="mcn-col cir"><div class="mcn-col-t">Cirurgias</div><span class="mcn-it">Histerectomia</span><span class="mcn-it">Miomectomia</span><span class="mcn-it">Laqueadura tubária</span><span class="mcn-it">Polipectomia uterina</span><span class="mcn-it">Ablação endometrial</span><span class="mcn-it">Prolapso genital</span><span class="mcn-it">Incontinência urinária (sling)</span><span class="mcn-it">CAF/LEEP</span><span class="mcn-it">Cisto de Bartholin</span><span class="mcn-it">Perineoplastia</span></div><div class="mcn-col esp"><div class="mcn-col-t">Especialidades</div><span class="mcn-it">Histeroscopia</span><span class="mcn-it">Cirurgia íntima feminina</span><span class="mcn-it">Pequenos lábios</span><span class="mcn-it">Capuz do clitóris</span><span class="mcn-it">Clitoroplastia</span></div><div class="mcn-col ant"><div class="mcn-col-t">Anticoncepção</div><span class="mcn-it">DIU</span></div></div>
+                </div>
+                <div class="mcn-pg mcn-doenca">
+                  <div class="mcn-cab2"><div class="mcn-marca"><b>Dra. Beltrana</b><span>Ginecologista</span></div></div>
+                  <div class="mcn-dz">
+                    <div><div class="mcn-autor">Por Dra. Beltrana · Ginecologista</div><div class="mcn-dz-h">Endometriose</div><div class="mcn-sk"><i></i><i></i><i></i></div><div class="mcn-wa" data-alvo="wa">Agendar pelo WhatsApp</div></div>
+                    <div class="mcn-video"></div>
+                  </div>
+                </div>
+                <i class="mcn-clique"></i>
+                <svg class="mcn-cursor" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 2l15 11.5-6.6.9 3.9 7.4-2.9 1.4-3.8-7.5L4 20z" fill="#fff" stroke="#0E172A" stroke-width="1.6" stroke-linejoin="round"/></svg>
+              </div>
+            </div>
+          </div>
+          <div class="mcn-deck"><div class="mcn-teclas"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="mcn-pad"></div></div>
+          <div class="mcn-borda"></div>
+        </div>
+        <p class="mcn-cap">Site de exemplo, com nome inventado. <button type="button" class="mcn-replay">Ver de novo</button></p>
+      </div>
+      <script>
+      (function () {
+        var root = document.getElementById('mcn-paginas'); if (!root) return;
+        var tela = root.querySelector('.mcn-tela'), site = root.querySelector('.mcn-site'), home = root.querySelector('.mcn-home'), doenca = root.querySelector('.mcn-doenca');
+        var mega = root.querySelector('.mcn-mega'), menu = root.querySelector('[data-alvo="menu"]'), endo = root.querySelector('[data-alvo="endo"]'), wa = root.querySelector('[data-alvo="wa"]');
+        var cursor = root.querySelector('.mcn-cursor'), clique = root.querySelector('.mcn-clique'), replay = root.querySelector('.mcn-replay');
+        var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        var run = 0, tocando = false, naTela = false, s = 1, cx = 0, cy = 0;
+        function espera(ms, id) { return new Promise(function (r) { setTimeout(function () { r(id === run); }, ms); }); }
+        function mede() { var w = tela.clientWidth; if (!w) return; root.classList.toggle('estreito', w < 560); s = w / site.offsetWidth; site.style.transform = 'scale(' + s + ')'; site.style.height = (tela.clientHeight / s) + 'px'; }
+        function ponto(el) { var r = el.getBoundingClientRect(), b = site.getBoundingClientRect(); return [(r.left - b.left + r.width * .5) / s, (r.top - b.top + r.height * .6) / s]; }
+        function poe(x, y, ms) { cx = x; cy = y; cursor.style.transitionDuration = ms + 'ms'; cursor.style.transform = 'translate(' + x + 'px,' + y + 'px)'; }
+        function vai(el, ms) { var p = ponto(el); poe(p[0], p[1], ms); }
+        function clica() { clique.style.setProperty('--x', cx + 'px'); clique.style.setProperty('--y', cy + 'px'); clique.classList.remove('on'); void clique.offsetWidth; clique.classList.add('on'); }
+        function pagina(n) { home.classList.toggle('on', n === 0); doenca.classList.toggle('on', n === 1); }
+        function limpa() { mega.classList.remove('aberto'); menu.classList.remove('ativo'); endo.classList.remove('ativo'); wa.classList.remove('ativo'); clique.classList.remove('on'); site.classList.remove('out'); }
+        function estadoFinal() { limpa(); pagina(0); mega.classList.add('aberto'); menu.classList.add('ativo'); cursor.classList.remove('on'); }
+        async function toca() {
+          var id = ++run; tocando = true;
+          while (id === run) {
+            limpa(); pagina(0); poe(site.offsetWidth * .78, site.offsetHeight * .8, 0); cursor.classList.add('on');
+            if (!await espera(1000, id)) return;
+            vai(menu, 1100);
+            if (!await espera(1200, id)) return;
+            menu.classList.add('ativo'); mega.classList.add('aberto');
+            if (!await espera(900, id)) return;
+            vai(endo, 1300);
+            if (!await espera(1500, id)) return;
+            endo.classList.add('ativo');
+            if (!await espera(400, id)) return;
+            clica();
+            if (!await espera(400, id)) return;
+            pagina(1); mega.classList.remove('aberto'); menu.classList.remove('ativo');
+            if (!await espera(600, id)) return;
+            vai(wa, 1300);
+            if (!await espera(1500, id)) return;
+            wa.classList.add('ativo'); clica();
+            if (!await espera(2400, id)) return;
+            site.classList.add('out'); cursor.classList.remove('on');
+            if (!await espera(600, id)) return;
+          }
+        }
+        function para() { run++; tocando = false; estadoFinal(); }
+        mede(); estadoFinal();
+        if ('ResizeObserver' in window) new ResizeObserver(mede).observe(tela); else window.addEventListener('resize', mede);
+        if (reduce || !('IntersectionObserver' in window)) return;
+        if (replay) replay.addEventListener('click', function () { run++; tocando = false; toca(); });
+        new IntersectionObserver(function (es) { es.forEach(function (e) { naTela = e.isIntersecting; if (naTela) { if (!tocando) toca(); } else if (tocando) para(); }); }, { threshold: 0.35 }).observe(root);
+        document.addEventListener('visibilitychange', function () { if (document.hidden) { if (tocando) para(); } else if (naTela && !tocando) toca(); });
+      })();
+      </script>
+      <!-- ===== fim do widget notebook ===== -->
+
+      <!-- ===== WIDGET HTML: celular (o mesmo site de exemplo, na versão de celular, com o menu ☰; abaixo de 700 px) ===== -->
+      <style>
+        .mcc { --site: var(--w-site, #0E766E); --navy: #0E172A; --slate: #475569; --line: #E6EAEF;
+               display: flex; flex-direction: column; align-items: center; gap: 14px; font-family: inherit; color: var(--navy); }
+        .mcc * { box-sizing: border-box; }
+        .mcc-phone { position: relative; width: min(320px, 86vw); aspect-ratio: 300 / 620; border-radius: 50px; background: var(--w-frame, #0E172A); padding: 10px;
+                     box-shadow: 0 30px 70px rgba(0,0,0,.42), 0 0 0 1px rgba(255,255,255,.09); }
+        .mcc-phone::before, .mcc-phone::after { content: ""; position: absolute; background: rgba(255,255,255,.12); border-radius: 2px; }
+        .mcc-phone::before { left: -3px; top: 120px; width: 3px; height: 56px; }
+        .mcc-phone::after { right: -3px; top: 160px; width: 3px; height: 80px; }
+        .mcc-screen { position: relative; height: 100%; border-radius: 40px; overflow: hidden; background: #fff; }
+        .mcc-island { position: absolute; top: 10px; left: 50%; transform: translateX(-50%); width: 92px; height: 27px; border-radius: 14px; background: #000; z-index: 9; }
+        .mcc-st { height: 46px; display: flex; align-items: center; justify-content: space-between; padding: 6px 26px 0 30px; font-weight: 600; font-size: 14px; }
+        .mcc-icons { display: flex; gap: 6px; align-items: center; }
+        .mcc-url { margin: 4px 12px 0; height: 32px; border-radius: 10px; background: #F1F3F6; display: flex; align-items: center; justify-content: center; gap: 6px; font-size: 12.5px; color: #334155; }
+        .mcc-url svg { width: 11px; height: 11px; color: #64748B; }
+        .mcc-pg { position: absolute; left: 0; right: 0; top: 82px; bottom: 0; opacity: 0; visibility: hidden; transition: opacity .4s ease, visibility 0s linear .4s; }
+        .mcc-pg.on { opacity: 1; visibility: visible; transition: opacity .4s ease; }
+        .mcc-screen.out .mcc-pg { opacity: 0; }
+        .mcc-cab { display: flex; align-items: center; gap: 8px; padding: 10px 12px; border-bottom: 1px solid var(--line); }
+        .mcc-marca { flex: 1; min-width: 0; }
+        .mcc-marca b { display: block; font-size: 15px; font-weight: 800; line-height: 1.2; }
+        .mcc-marca span { display: block; font-size: 11.5px; color: var(--slate); }
+        .mcc-agendar { flex: none; padding: 7px 9px; border-radius: 8px; background: var(--site); color: #fff; font-weight: 700; font-size: 11.5px; }
+        .mcc-burger { position: relative; flex: none; width: 34px; height: 34px; border-radius: 8px; border: 1px solid var(--line); display: grid; place-content: center; gap: 4px; }
+        .mcc-burger b { display: block; width: 16px; height: 2px; border-radius: 1px; background: var(--navy); }
+        .mcc-burger.ativo { border-color: var(--site); background: rgba(14,118,110,.08); }
+        .mcc-hero { padding: 20px 14px; display: grid; gap: 16px; }
+        .mcc-sk { display: grid; gap: 9px; }
+        .mcc-sk i { display: block; height: 10px; border-radius: 5px; background: #EDF0F4; }
+        .mcc-sk i.g { height: 22px; width: 72%; background: #E2E7EE; }
+        .mcc-sk i:nth-child(2) { width: 94%; } .mcc-sk i:nth-child(3) { width: 82%; } .mcc-sk i:nth-child(4) { width: 64%; }
+        .mcc-foto { height: 150px; border-radius: 14px; background: linear-gradient(160deg, #E8EDF2, #D3DBE4); }
+        .mcc-menu { position: absolute; left: 0; right: 0; top: 55px; bottom: 0; z-index: 3; background: #fff; border-top: 1px solid var(--line); opacity: 0; transform: translateY(-8px); visibility: hidden;
+                    transition: opacity .3s ease, transform .3s ease, visibility 0s linear .3s; }
+        .mcc-menu.aberto { opacity: 1; transform: none; visibility: visible; transition: opacity .3s ease, transform .3s ease; }
+        .mcc-lista { height: 100%; overflow: hidden; padding: 4px 16px 24px; }
+        .mcc-g-t { padding: 14px 0 6px; font-size: 12.5px; font-weight: 800; letter-spacing: .02em; color: var(--site); }
+        .mcc-it { position: relative; display: block; padding: 8px 6px; margin: 0 -6px; border-bottom: 1px solid var(--line); border-radius: 6px; font-size: 14.5px; line-height: 1.3; }
+        .mcc-it.ativo { background: rgba(14,118,110,.12); color: var(--site); font-weight: 700; }
+        .mcc-cab2 { padding: 10px 12px; border-bottom: 1px solid var(--line); }
+        .mcc-dz { padding: 22px 14px; }
+        .mcc-autor { font-size: 11.5px; color: var(--slate); }
+        .mcc-dz-h { margin-top: 6px; font-size: 28px; line-height: 1.15; font-weight: 800; }
+        .mcc-dz .mcc-sk { margin-top: 14px; }
+        .mcc-wa { position: relative; display: inline-flex; margin-top: 18px; padding: 12px 18px; border-radius: 10px; background: var(--site); color: #fff; font-weight: 700; font-size: 14.5px; }
+        .mcc-wa.ativo { box-shadow: 0 0 0 4px rgba(14,118,110,.22); }
+        .mcc-toque { position: absolute; left: 50%; top: 50%; width: 40px; height: 40px; margin: -20px 0 0 -20px; border-radius: 50%; background: rgba(14,23,42,.25); opacity: 0; pointer-events: none; }
+        .toca > .mcc-toque { animation: mccToque .7s ease-out both; }
+        @keyframes mccToque { 0% { opacity: 0; transform: scale(.4); } 30% { opacity: 1; transform: scale(1); } 100% { opacity: 0; transform: scale(1.7); } }
+        .mcc-cap { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 6px 12px; font-size: 13px; color: var(--w-cap, #475569); text-align: center; }
+        .mcc-replay { background: none; border: 1px solid currentColor; color: inherit; border-radius: 100px; padding: 5px 12px; font-size: 12.5px; font-weight: 600; cursor: pointer; min-height: 32px; }
+        @media (prefers-reduced-motion: reduce) { .toca > .mcc-toque { animation: none; } .mcc-pg, .mcc-pg.on, .mcc-menu, .mcc-menu.aberto { transition: none; } .mcc-replay { display: none; } }
+      </style>
+      <div class="mcc" id="mcc-paginas">
+        <div class="mcc-phone" role="img" aria-label="Site de exemplo, com nome inventado, na versão de celular: o menu com todas as páginas e a página da doença">
+          <div class="mcc-screen">
+            <div class="mcc-island"></div>
+            <div class="mcc-st" aria-hidden="true"><span>22:07</span><span class="mcc-icons"><svg width="18" height="12" viewBox="0 0 18 12" fill="currentColor"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="5" y="5" width="3" height="7" rx="1"/><rect x="10" y="2.5" width="3" height="9.5" rx="1"/><rect x="15" y="0" width="3" height="12" rx="1"/></svg><svg width="26" height="12" viewBox="0 0 26 12"><rect x="0.5" y="0.5" width="22" height="11" rx="3" fill="none" stroke="currentColor" stroke-opacity=".5"/><rect x="2" y="2" width="17" height="8" rx="2" fill="currentColor"/><rect x="23.5" y="4" width="2" height="4" rx="1" fill="currentColor" fill-opacity=".5"/></svg></span></div>
+            <div class="mcc-url"><svg viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></g></svg>Site da Dra. Beltrana</div>
+            <div class="mcc-pg mcc-home on">
+              <div class="mcc-cab"><div class="mcc-marca"><b>Dra. Beltrana</b><span>Ginecologista</span></div><div class="mcc-agendar">Agendar consulta</div><div class="mcc-burger" data-alvo="menu"><b></b><b></b><b></b><i class="mcc-toque"></i></div></div>
+              <div class="mcc-hero"><div class="mcc-sk"><i class="g"></i><i></i><i></i><i></i></div><div class="mcc-foto"></div></div>
+              <div class="mcc-menu"><div class="mcc-lista"><div class="mcc-g-t">Patologias</div><span class="mcc-it" data-alvo="endo">Endometriose<i class="mcc-toque"></i></span><span class="mcc-it">Mioma</span><span class="mcc-it">Adenomiose</span><span class="mcc-it">SOP</span><span class="mcc-it">Cisto ovariano</span><div class="mcc-g-t">Cirurgias</div><span class="mcc-it">Histerectomia</span><span class="mcc-it">Miomectomia</span><span class="mcc-it">Laqueadura tubária</span><span class="mcc-it">Polipectomia uterina</span><span class="mcc-it">Ablação endometrial</span><span class="mcc-it">Prolapso genital</span><span class="mcc-it">Incontinência urinária (sling)</span><span class="mcc-it">CAF/LEEP</span><span class="mcc-it">Cisto de Bartholin</span><span class="mcc-it">Perineoplastia</span><div class="mcc-g-t">Especialidades</div><span class="mcc-it">Histeroscopia</span><span class="mcc-it">Cirurgia íntima feminina</span><span class="mcc-it">Pequenos lábios</span><span class="mcc-it">Capuz do clitóris</span><span class="mcc-it">Clitoroplastia</span><div class="mcc-g-t">Anticoncepção</div><span class="mcc-it">DIU</span></div></div>
+            </div>
+            <div class="mcc-pg mcc-doenca">
+              <div class="mcc-cab2"><div class="mcc-marca"><b>Dra. Beltrana</b><span>Ginecologista</span></div></div>
+              <div class="mcc-dz"><div class="mcc-autor">Por Dra. Beltrana · Ginecologista</div><div class="mcc-dz-h">Endometriose</div><div class="mcc-sk"><i></i><i></i><i></i></div><div class="mcc-wa" data-alvo="wa">Agendar pelo WhatsApp<i class="mcc-toque"></i></div></div>
+            </div>
+          </div>
+        </div>
+        <p class="mcc-cap">Site de exemplo, com nome inventado. <button type="button" class="mcc-replay">Ver de novo</button></p>
+      </div>
+      <script>
+      (function () {
+        var root = document.getElementById('mcc-paginas'); if (!root) return;
+        var tela = root.querySelector('.mcc-screen'), home = root.querySelector('.mcc-home'), doenca = root.querySelector('.mcc-doenca'), menu = root.querySelector('.mcc-menu'), lista = root.querySelector('.mcc-lista');
+        var burger = root.querySelector('[data-alvo="menu"]'), endo = root.querySelector('[data-alvo="endo"]'), wa = root.querySelector('[data-alvo="wa"]'), replay = root.querySelector('.mcc-replay');
+        var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        var run = 0, tocando = false, naTela = false;
+        function espera(ms, id) { return new Promise(function (r) { setTimeout(function () { r(id === run); }, ms); }); }
+        function toque(el) { el.classList.remove('toca'); void el.offsetWidth; el.classList.add('toca'); }
+        function rola(de, ate, dur, id) { /* rolagem da lista do menu (suave, em requestAnimationFrame) */
+          return new Promise(function (res) { var t0 = performance.now();
+            (function f(t) { if (id !== run) return res(false);
+              var k = Math.min(1, (t - t0) / dur), e = k < .5 ? 2 * k * k : 1 - Math.pow(-2 * k + 2, 2) / 2;
+              lista.scrollTop = de + (ate - de) * e; if (k < 1) requestAnimationFrame(f); else res(true); })(performance.now()); });
+        }
+        function pagina(n) { home.classList.toggle('on', n === 0); doenca.classList.toggle('on', n === 1); }
+        function limpa() { menu.classList.remove('aberto'); [burger, endo, wa].forEach(function (e) { e.classList.remove('ativo', 'toca'); }); tela.classList.remove('out'); lista.scrollTop = 0; }
+        function estadoFinal() { limpa(); pagina(0); menu.classList.add('aberto'); burger.classList.add('ativo'); }
+        async function toca() {
+          var id = ++run; tocando = true;
+          while (id === run) {
+            limpa(); pagina(0);
+            if (!await espera(1000, id)) return;
+            toque(burger);
+            if (!await espera(400, id)) return;
+            burger.classList.add('ativo'); menu.classList.add('aberto');
+            if (!await espera(600, id)) return;
+            if (!await rola(0, Math.max(0, lista.scrollHeight - lista.clientHeight), 1800, id)) return;
+            if (!await espera(600, id)) return;
+            if (!await rola(lista.scrollTop, 0, 800, id)) return;
+            if (!await espera(400, id)) return;
+            endo.classList.add('ativo'); toque(endo);
+            if (!await espera(600, id)) return;
+            pagina(1); menu.classList.remove('aberto'); burger.classList.remove('ativo');
+            if (!await espera(1400, id)) return;
+            wa.classList.add('ativo'); toque(wa);
+            if (!await espera(2400, id)) return;
+            tela.classList.add('out');
+            if (!await espera(600, id)) return;
+          }
+        }
+        function para() { run++; tocando = false; estadoFinal(); }
+        estadoFinal();
+        if (reduce || !('IntersectionObserver' in window)) return;
+        if (replay) replay.addEventListener('click', function () { run++; tocando = false; toca(); });
+        new IntersectionObserver(function (es) { es.forEach(function (e) { naTela = e.isIntersecting; if (naTela) { if (!tocando) toca(); } else if (tocando) para(); }); }, { threshold: 0.35 }).observe(root);
+        document.addEventListener('visibilitychange', function () { if (document.hidden) { if (tocando) para(); } else if (naTela && !tocando) toca(); });
+      })();
+      </script>
+      <!-- ===== fim do widget celular ===== -->
+
+    </div>
+    <div class="paginas-grid">
+      <ul class="recursos">
+        <li class="recurso"><span class="recurso-ico"><svg class="ico" aria-hidden="true"><use href="#i-frase"/></svg></span><h3>Responde ao assunto.</h3><p>Cada página traz as perguntas e respostas do que os pacientes buscam sobre aquela doença ou aquele procedimento.</p></li>
+        <li class="recurso"><span class="recurso-ico"><svg class="ico" aria-hidden="true"><use href="#i-busca"/></svg></span><h3>Feita para a busca certa.</h3><p>Título e descrição com o assunto e a sua cidade, para buscas como "endometriose em São Luís".</p></li>
+        <li class="recurso"><span class="recurso-ico"><svg class="ico" aria-hidden="true"><use href="#i-anuncio"/></svg></span><h3>Recebe o anúncio do assunto.</h3><p>Os anúncios de cada assunto levam à página dele.</p></li>
+        <li class="recurso"><span class="recurso-ico"><svg class="ico" aria-hidden="true"><use href="#i-alvo"/></svg></span><h3>Uma saída só.</h3><p>Sem menu e sem links: o botão do WhatsApp já na primeira tela.</p></li>
+      </ul>
+      <div class="pg-provas">
+        <p class="per">No caso do Dr. Lucas Santana, ginecologista em São Luís:</p>
+        <div class="pg-num"><b data-count="20">20</b><span>dos 26 contatos vindos de anúncios no Google chegaram pela página de histeroscopia</span><small>de 19/10 a 18/11/2026</small></div>
+        <p class="pg-linha">Depois da página inicial (165 visitas) e da página do link do Instagram (148), as páginas por onde mais visitas entraram foram histeroscopia (78), adenomiose (67), Bartholin (66), cirurgia de prolapso (49) e endometriose (38), de 31/10 a 18/11/2026.</p>
+        <ul class="pg-barras"><li class="cinza"><span>Página inicial</span><b>165</b><i style="--w: 100.0%"></i></li><li class="cinza"><span>Página do link do Instagram</span><b>148</b><i style="--w: 89.7%"></i></li><li><span>Histeroscopia</span><b>78</b><i style="--w: 47.3%"></i></li><li><span>Adenomiose</span><b>67</b><i style="--w: 40.6%"></i></li><li><span>Bartholin</span><b>66</b><i style="--w: 40.0%"></i></li><li><span>Cirurgia de prolapso</span><b>49</b><i style="--w: 29.7%"></i></li><li><span>Endometriose</span><b>38</b><i style="--w: 23.0%"></i></li></ul>
+        <p class="pg-linha">O site tem 7 páginas de doença e de procedimento, 14 de cirurgia em São Luís e 4 de cirurgia em Teresina (conferidas em 18/11/2026).</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 7 · Google ===== -->
+<section class="sec">
+  <div class="wrap" data-reveal>
+    <div class="cab cab-c">
+      <p class="rotulo">Google</p>
+      <h2>Feito para ser encontrado no Google</h2>
+      <p>Cada página é preparada para as buscas da sua especialidade e da sua cidade.</p>
+    </div>
+    <ul class="lista-g">
+      <li><svg class="ico" aria-hidden="true"><use href="#i-ok"/></svg>Uma página por doença e por procedimento, para buscas como "endometriose em São Luís"</li>
+      <li><svg class="ico" aria-hidden="true"><use href="#i-ok"/></svg>Título e descrição de cada página com a sua cidade</li>
+      <li><svg class="ico" aria-hidden="true"><use href="#i-ok"/></svg>Informações que o Google lê: CRM, RQE, onde e quando você atende, perguntas e respostas</li>
+      <li><svg class="ico" aria-hidden="true"><use href="#i-ok"/></svg>Mapa do site, regras para os robôs dos buscadores e resumo do site para ferramentas de IA</li>
+      <li><svg class="ico" aria-hidden="true"><use href="#i-ok"/></svg>Endereços antigos mantidos ou redirecionados, para não perder o que o site já conquistou no Google</li>
+      <li><svg class="ico" aria-hidden="true"><use href="#i-ok"/></svg>Avaliações reais do Google, escolhidas com regra: só 5 estrelas, com o texto exato</li>
+      <li><svg class="ico" aria-hidden="true"><use href="#i-ok"/></svg>Na troca, o Google e o Bing avisados das páginas novas</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===== 8 · Inteligências artificiais ===== -->
+<section class="sec sec-alt">
+  <div class="wrap lado-grid" data-reveal>
+    <div class="cab">
+      <p class="rotulo">Inteligências artificiais</p>
+      <h2>As inteligências artificiais já mandam visitas</h2>
+      <p class="ia-txt">O site do Dr. Lucas Santana, ginecologista em São Luís, recebeu <b>69</b> visualizações vindas de assistentes de IA (ChatGPT, Gemini, Perplexity e Copilot), de 01/10/2025 a 17/11/2026 (com o site antigo até 19/10/2026 e o novo depois), pelo Google Analytics.</p>
+      <p class="linha-final">No seu painel, o bloco "Seu site nas inteligências artificiais" mostra as visitas de cada IA e as leituras do site pelos robôs.</p>
+    </div>
+    <div class="ia-card">
+      <b class="ia-num" data-count="69">69</b>
+      <span class="ia-lb">visualizações vindas de assistentes de IA</span>
+      <ul class="ia-chips"><li>ChatGPT</li><li>Gemini</li><li>Perplexity</li><li>Copilot</li></ul>
+      <p class="ia-per">de 01/10/2025 a 17/11/2026</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 9 · Velocidade e celular ===== -->
+<section class="sec">
+  <div class="wrap lado-grid" data-reveal>
+    <div class="cab">
+      <p class="rotulo">Velocidade</p>
+      <h2>Site rápido, aprovado no teste de velocidade do Google</h2>
+      <p>O teste é o PageSpeed Insights, a ferramenta de velocidade do próprio Google, na página inicial do site do Dr. Lucas Santana, ginecologista em São Luís, em 18/11/2026.</p>
+    </div>
+    <ul class="vel">
+      <li><div class="gauge" style="--v: 95"><b data-count="95">95</b></div><p>no celular: site rápido, aprovado no teste de velocidade do Google</p></li>
+      <li><div class="gauge" style="--v: 100"><b data-count="100">100</b></div><p>em SEO, acessibilidade e boas práticas: 100% otimizado</p></li>
+      <li class="cel">
+        <h3>Pensado para o celular</h3>
+        <div class="cel-dado"><b>77%</b><span>das visitas ao site do Dr. Lucas Santana foram pelo celular (637 de 827)</span><small>de 31/10 a 18/11/2026</small></div>
+        <ul class="define"><li><svg class="ico" aria-hidden="true"><use href="#i-ok"/></svg>Botão do WhatsApp na primeira tela e botão fixo no celular</li></ul>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===== 10 · Cada clique medido ===== -->
+<section class="sec sec-alt">
+  <div class="wrap" data-reveal>
+    <div class="cab cab-c">
+      <p class="rotulo">Medição</p>
+      <h2>Cada clique medido</h2>
+      <p>A medição entra no site antes da troca e alimenta o seu painel.</p>
+    </div>
+    <ul class="recursos">
+      <li class="recurso"><span class="recurso-ico"><svg class="ico" aria-hidden="true"><use href="#i-grafico"/></svg></span><h3>Google Analytics.</h3><p>As visitas e cada clique no botão do WhatsApp, com o botão e a página.</p></li>
+      <li class="recurso"><span class="recurso-ico"><svg class="ico" aria-hidden="true"><use href="#i-busca"/></svg></span><h3>Search Console e Bing.</h3><p>O site verificado e o mapa do site enviado.</p></li>
+      <li class="recurso"><span class="recurso-ico"><svg class="ico" aria-hidden="true"><use href="#i-alvo"/></svg></span><h3>Conversão do Google Ads.</h3><p>O clique no botão do WhatsApp de quem chegou por um anúncio no Google.</p></li>
+      <li class="recurso"><span class="recurso-ico"><svg class="ico" aria-hidden="true"><use href="#i-olho"/></svg></span><h3>Pixel da Meta.</h3><p>As visitas e os públicos de visitantes.</p></li>
+      <li class="recurso"><span class="recurso-ico"><svg class="ico" aria-hidden="true"><use href="#i-lista"/></svg></span><h3>Registro próprio dos cliques.</h3><p>Cada clique, com data, hora, página e botão, sem cookies e sem nenhum dado que identifique a pessoa.</p></li>
+      <li class="recurso"><span class="recurso-ico"><svg class="ico" aria-hidden="true"><use href="#i-frase"/></svg></span><h3>Frase de origem no botão do WhatsApp.</h3><p>A conversa já começa dizendo que o paciente veio do seu site.</p></li>
+      <li class="recurso inteira"><span class="recurso-ico"><svg class="ico" aria-hidden="true"><use href="#i-cadeado"/></svg></span><h3>Política de privacidade e preferências de cookies.</h3><p>De acordo com a LGPD.</p></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===== 11 · Como construímos o seu site ===== -->
+<section class="sec" id="como">
+  <div class="wrap" data-reveal>
+    <div class="cab cab-c">
+      <p class="rotulo">Como funciona</p>
+      <h2>Como construímos o seu site, em oito passos</h2>
+      <p>Quem já tem site começa pelo levantamento do que ele tem; quem não tem começa pela identidade visual. As provas são do caso do Dr. Lucas Santana, ginecologista em São Luís.</p>
+    </div>
+    <ol class="passos">
+      <li class="passo"><span class="passo-n">PASSO 01</span><h3>Levantamento do site atual.</h3><p>Se você já tem site, começamos por todas as páginas, títulos, textos, endereços e imagens.</p>
+        <p class="prova"><svg class="ico" aria-hidden="true"><use href="#i-selo"/></svg><span>O site antigo do Dr. Lucas Santana tinha 26 páginas.</span></p></li>
+      <li class="passo"><span class="passo-n">PASSO 02</span><h3>Identidade visual e modelos.</h3><p>Primeiro as cores, as fontes e os componentes; depois o modelo de cada tipo de página, a partir do seu logo, das suas fotos e do consultório.</p>
+        <p class="prova"><svg class="ico" aria-hidden="true"><use href="#i-selo"/></svg><span>No site do Dr. Lucas Santana, foram 8 modelos aprovados.</span></p></li>
+      <li class="passo"><span class="passo-n">PASSO 03</span><h3>Textos.</h3><p>Os do site atual entram palavra por palavra; os novos são escritos pela equipe, sem copiar outros sites; os fatos são confirmados com você.</p>
+        <p class="prova"><svg class="ico" aria-hidden="true"><use href="#i-selo"/></svg><span>No site do Dr. Lucas Santana, os textos do site antigo foram mantidos palavra por palavra.</span></p></li>
+      <li class="passo"><span class="passo-n">PASSO 04</span><h3>Montagem num endereço de teste.</h3><p>Fechado para o Google. Se você já tem site, ele continua no ar, sem nenhuma mudança, durante toda a construção.</p>
+        <p class="prova"><svg class="ico" aria-hidden="true"><use href="#i-selo"/></svg><span>O site do Dr. Lucas Santana só passou para o endereço principal depois de pronto e conferido.</span></p></li>
+      <li class="passo"><span class="passo-n">PASSO 05</span><h3>Google e medição preparados antes da troca.</h3><p>Títulos, descrições, informações para o Google, redirecionamentos, medição e política de privacidade.</p>
+        <p class="prova"><svg class="ico" aria-hidden="true"><use href="#i-selo"/></svg><span>No site do Dr. Lucas Santana, são 67 redirecionamentos permanentes.</span></p></li>
+      <li class="passo"><span class="passo-n">PASSO 06</span><h3>Conferência completa e cópia de segurança.</h3><p>Tudo conferido antes da troca, com a cópia do site antigo guardada.</p>
+        <p class="prova"><svg class="ico" aria-hidden="true"><use href="#i-selo"/></svg><span>A cópia completa do site antigo do Dr. Lucas Santana foi feita no dia da troca, 19/10/2026.</span></p></li>
+      <li class="passo"><span class="passo-n">PASSO 07</span><h3>Troca com roteiro.</h3><p>O site novo passa para o endereço principal e é aberto ao Google. O antigo fica guardado, com senha e com cópia.</p>
+        <p class="prova"><svg class="ico" aria-hidden="true"><use href="#i-selo"/></svg><span>O site novo do Dr. Lucas Santana foi aberto ao Google em 19/10/2026, às 19:47.</span></p></li>
+      <li class="passo"><span class="passo-n">PASSO 08</span><h3>Conferência no ar.</h3><p>Todas as páginas conferidas no ar, aviso ao Google e ao Bing e prova dos cliques e da medição.</p>
+        <p class="prova"><svg class="ico" aria-hidden="true"><use href="#i-selo"/></svg><span>Na noite da troca, as 30 páginas do site do Dr. Lucas Santana foram conferidas, sem falhas.</span></p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ===== 12 · Manutenção ===== -->
+<section class="sec sec-alt">
+  <div class="wrap" data-reveal>
+    <div class="cab cab-c">
+      <p class="rotulo">Manutenção</p>
+      <h2>O seu site cuidado depois de pronto</h2>
+      <p>A manutenção e a hospedagem estão no plano. É o que se faz para o site continuar seguro, atualizado e medido.</p>
+    </div>
+    <ul class="limites seis">
+      <li><span class="n">( 01 )</span><h3>Atualizações.</h3><p>Do WordPress, do tema e dos plugins.</p></li>
+      <li><span class="n">( 02 )</span><h3>Cuidado em cada mudança.</h3><p>Cópia de segurança antes, teste sem gravar e conferência no ar.</p></li>
+      <li><span class="n">( 03 )</span><h3>Medição conferida.</h3><p>Google Analytics, Google Ads e o registro dos cliques.</p></li>
+      <li><span class="n">( 04 )</span><h3>Cookies e privacidade em dia.</h3><p>A política de privacidade e as preferências de cookies.</p></li>
+      <li><span class="n">( 05 )</span><h3>Trabalho contínuo para o Google.</h3><p>As páginas cuidadas para as buscas da sua especialidade e da sua cidade.</p></li>
+      <li><span class="n">( 06 )</span><h3>Velocidade.</h3><p>O site acompanhado pelo teste de velocidade do Google.</p></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===== 13 · A secretária e os anúncios ===== -->
+<section class="sec">
+  <div class="wrap" data-reveal>
+    <div class="cab">
+      <p class="rotulo">Secretária e anúncios</p>
+      <h2>Os anúncios levam os pacientes ao seu site. A&nbsp;Secretária IA atende cada&nbsp;um.</h2>
+    </div>
+    <div class="blocos">
+      <div class="bloco">
+        <h3>A Secretária IA no WhatsApp</h3>
+        <p>Ela atende no WhatsApp do consultório, com as suas regras: pergunta o motivo antes do valor, explica a consulta do seu jeito e avisa a equipe com o pedido de agendamento pronto. Ela não diagnostica, não indica remédio, não comenta exames e não marca direto na agenda: a equipe confirma a data.</p>
+        <p class="per">No consultório do Dr. Lucas Santana, ginecologista em São Luís, de 24/04 a 16/11/2026:</p>
+        <ul class="nums-lin">
+          <li><b data-count="1886">1.886</b><span>conversas iniciadas pelas pacientes</span></li>
+          <li><b data-count="439">439</b><span>pedidos de agendamento enviados à equipe</span></li>
+          <li><b data-count="617">617</b><span>conversas fora do horário</span></li>
+        </ul>
+      </div>
+      <div class="bloco dest">
+        <h3>Você define o investimento. O mínimo é R$&nbsp;500 por mês.</h3>
+        <p>O valor dos anúncios é seu: você paga direto no seu cartão, fora do preço do plano. Acima do mínimo, você escolhe quanto investir.</p>
+        <p class="linha-final">O investimento define até onde os anúncios podem chegar: com mais investimento, eles podem aparecer para mais pessoas. Você acompanha no painel as visitas que eles trouxeram ao seu site.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 14 · O painel (faixa escura) ===== -->
+<section class="sec sec-escura">
+  <div class="wrap" data-reveal>
+    <div class="cab cab-c">
+      <p class="rotulo">Painel</p>
+      <h2>O site, os anúncios e a secretária no mesmo painel</h2>
+      <p>Você vê de onde vieram as visitas, as buscas no Google, as visitas vindas das inteligências artificiais e quem chamou no WhatsApp pelo site, ao lado do que a secretária fez. Cada conta vê só o seu consultório, com senha pessoal. Tema claro ou escuro, e relatório em PDF do período.</p>
+    </div>
+    <div class="painel-demo">
+
+      <!-- ===== WIDGET HTML: painel (variante P3, completo: com "Seu site" e "Seu site nas inteligências artificiais") ===== -->
+      <style>
+        .mcp { --teal: var(--p-acc, #2DD4BF); --teal-bg: var(--p-acc-bg, #12312E); --amber: var(--p-amber, #F59E0B); --bg: var(--p-bg, #0B1220); --card: var(--p-card, #121B2D); --line: var(--p-line, #1C2740); --tx: var(--p-tx, #E6EAEF); --tx2: var(--p-tx2, #A2ADC2);
+               font-family: inherit; color: var(--tx); display: flex; justify-content: center; width: 100%; }
+        .mcp * { box-sizing: border-box; }
+        .mcp-mon { width: min(1040px, 100%); display: flex; flex-direction: column; align-items: center; }
+        .mcp-bezel { position: relative; width: 100%; background: var(--p-bezel, #1C2740); border: 1px solid var(--p-bezel-b, #2B3A57); border-radius: 16px; padding: 12px 12px 20px; box-shadow: 0 30px 70px rgba(0,0,0,.45); }
+        .mcp-cam { position: absolute; top: 4px; left: 50%; width: 5px; height: 5px; margin-left: -2.5px; border-radius: 50%; background: var(--bg); }
+        .mcp-vp { position: relative; width: 100%; aspect-ratio: 16 / 10; overflow: hidden; border-radius: 6px; background: var(--bg); }
+        .mcp-neck { width: 12%; height: 48px; background: linear-gradient(var(--p-bezel, #1C2740), var(--card)); }
+        .mcp-base { width: 34%; height: 12px; border-radius: 8px 8px 4px 4px; background: var(--p-bezel, #1C2740); }
+        @media (max-width: 599px) { .mcp-bezel { padding: 6px 6px 10px; border-radius: 0; border-left: 0; border-right: 0; } .mcp-vp { aspect-ratio: 4 / 3; border-radius: 0; } .mcp-neck { height: 24px; } }
+        .mcp-panel { position: absolute; top: 0; left: 0; width: 1100px; padding: 28px; display: flex; flex-direction: column; gap: 22px; background: var(--bg); transform-origin: 0 0; }
+        .mcp.estreito .mcp-panel { width: 720px; padding: 22px; }
+        .mcp.w460 .mcp-panel { width: 460px; padding: 16px; gap: 16px; }
+        .mcp.semanim .p-fill, .mcp.semanim .p-bar, .mcp.semanim .p-tip { transition: none !important; }
+        .p-top { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; justify-content: space-between; }
+        .p-brand { display: flex; gap: 8px; align-items: center; }
+        .p-sq { width: 28px; height: 28px; border-radius: 7px; background: var(--teal); color: var(--bg); display: grid; place-items: center; font-weight: 800; font-size: 15px; }
+        .p-brand b { font-weight: 800; font-size: 18px; }
+        .p-muted { font-size: 13px; color: var(--tx2); }
+        .p-tools { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+        .p-pill { background: var(--card); border: 1px solid var(--line); border-radius: 9px; padding: 7px 12px; font-size: 13px; }
+        .p-pill.b { font-weight: 600; }
+        .p-tog { display: flex; gap: 2px; background: var(--card); border: 1px solid var(--line); border-radius: 9px; padding: 3px; }
+        .p-tog span { padding: 4px 10px; border-radius: 7px; font-size: 13px; color: var(--tx2); }
+        .p-tog span.on { background: var(--line); color: var(--tx); font-weight: 600; }
+        .p-acc { display: flex; gap: 8px; align-items: center; font-size: 13px; font-weight: 600; }
+        .p-av { width: 28px; height: 28px; border-radius: 50%; background: var(--teal-bg); color: var(--teal); display: grid; place-items: center; font-size: 11px; font-weight: 700; }
+        .p-date { font-size: 13px; font-weight: 600; color: var(--teal); }
+        .p-h { font-weight: 800; font-size: 30px; line-height: 1.2; margin-top: 6px; }
+        .p-sum { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+        .p-card { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 18px; }
+        .p-card.hi { background: var(--teal-bg); border-color: var(--teal); }
+        .p-lb { font-size: 13px; color: var(--tx2); }
+        .p-card.hi .p-lb, .p-card.hi .p-num { color: var(--teal); }
+        .p-num { font-weight: 800; font-size: 40px; line-height: 1.1; margin-top: 6px; font-variant-numeric: tabular-nums; }
+        .p-num.am { color: var(--amber); }
+        .p-block { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 22px; display: flex; flex-direction: column; gap: 26px; }
+        .p-bt { font-weight: 700; font-size: 20px; }
+        .p-cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+        .p-cards.dois { grid-template-columns: repeat(2, 1fr); }
+        .p-mini { background: var(--bg); border-radius: 12px; padding: 14px; }
+        .p-mini .p-num { font-size: 30px; }
+        .p-lists { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+        .p-lt { font-size: 14px; font-weight: 600; }
+        .p-rows { display: flex; flex-direction: column; gap: 10px; margin-top: 12px; }
+        .p-rl { display: flex; justify-content: space-between; font-size: 13px; margin-bottom: 5px; gap: 10px; }
+        .p-rl b { font-weight: 600; font-variant-numeric: tabular-nums; }
+        .p-track { height: 7px; border-radius: 4px; background: var(--line); overflow: hidden; }
+        .p-track.duo { display: flex; height: 12px; margin-top: 14px; border-radius: 6px; }
+        .p-fill { height: 100%; width: 0; border-radius: 4px; background: var(--teal); transition: width 1.1s cubic-bezier(.2,.8,.2,1); }
+        .p-track.duo .p-fill { border-radius: 0; }
+        .p-fill.am { background: var(--amber); }
+        .p-chart { position: relative; height: 170px; display: flex; align-items: flex-end; gap: 8px; margin-top: 34px; }
+        .p-col { flex: 1; position: relative; height: 100%; display: flex; align-items: flex-end; }
+        .p-bar { width: 100%; height: 0; border-radius: 4px 4px 0 0; background: var(--teal); transition: height .9s cubic-bezier(.2,.8,.2,1); }
+        .p-bar.am { background: var(--amber); }
+        .p-bar.zero { background: var(--line); border-radius: 0; }
+        .p-tip { position: absolute; left: 50%; bottom: calc(100% + 8px); transform: translate(-50%, 6px); white-space: nowrap; z-index: 2; background: var(--bg); border: 1px solid var(--line); border-radius: 8px; padding: 5px 9px; font-size: 12px; font-weight: 600; opacity: 0; transition: opacity .4s, transform .4s; }
+        .p-tip.on { opacity: 1; transform: translate(-50%, 0); }
+        .p-axis { display: flex; gap: 8px; margin-top: 8px; }
+        .p-axis span { flex: 1; font-size: 11px; color: var(--tx2); }
+        .p-leg { display: flex; flex-wrap: wrap; gap: 6px 18px; margin-top: 10px; font-size: 12px; color: var(--tx2); }
+        .p-leg b { color: var(--tx); font-weight: 600; font-variant-numeric: tabular-nums; }
+        .p-leg i { display: inline-block; width: 10px; height: 10px; border-radius: 3px; margin-right: 6px; vertical-align: -1px; background: var(--teal); }
+        .p-leg i.am { background: var(--amber); }
+        .mcp.estreito .p-cards:not(.dois), .mcp.w460 .p-cards:not(.dois) { grid-template-columns: repeat(2, 1fr); }
+        .mcp.estreito .p-lists, .mcp.w460 .p-lists { grid-template-columns: 1fr; gap: 26px; }
+        .mcp.estreito .p-chart, .mcp.w460 .p-chart { gap: 3px; }
+        .mcp.w460 .p-sum { gap: 8px; }
+        .mcp.w460 .p-card { padding: 12px; border-radius: 12px; }
+        .mcp.w460 .p-num { font-size: 30px; }
+        .mcp.w460 .p-mini .p-num { font-size: 26px; }
+        .mcp.w460 .p-h { font-size: 21px; }
+        .mcp.w460 .p-block { padding: 14px; gap: 20px; }
+        .mcp.w460 .p-bt { font-size: 17px; }
+        .mcp.w460 .p-chart { height: 130px; margin-top: 30px; }
+        .mcp.w460 .p-axis { gap: 3px; }
+        .mcp.w460 .p-muted { display: none; }
+      </style>
+      <div class="mcp" id="mcp-painel" role="img" aria-label="Painel de exemplo">
+        <div class="mcp-mon">
+          <div class="mcp-bezel">
+            <div class="mcp-cam"></div>
+            <div class="mcp-vp">
+              <div class="mcp-panel">
+                <div class="p-top">
+                  <div class="p-brand"><span class="p-sq">M</span><b>MedCai</b><span class="p-muted">Painel do consultório</span></div>
+                  <div class="p-tools">
+                    <span class="p-pill">1 a 31 de outubro de 2026</span>
+                    <span class="p-pill b">Exportar PDF</span>
+                    <span class="p-tog"><span>Claro</span><span class="on">Escuro</span></span>
+                    <span class="p-acc"><span class="p-av">DF</span>Dr. Fulano</span>
+                  </div>
+                </div>
+                <div data-rv>
+                  <div class="p-date">1 a 31 de outubro de 2026</div>
+                  <div class="p-h">Olá, Dr. Fulano. Este é o resumo do seu mês.</div>
+                </div>
+                <div class="p-sum" data-rv>
+                  <div class="p-card"><div class="p-lb">Pacientes que procuraram</div><div class="p-num" data-n="214">214</div></div>
+                  <div class="p-card hi"><div class="p-lb">Pediram agendamento</div><div class="p-num" data-n="58">58</div></div>
+                  <div class="p-card"><div class="p-lb">Atendidas fora do horário</div><div class="p-num am" data-n="71">71</div></div>
+                </div>
+                <div class="p-block">
+                  <div class="p-bt">Sua secretária no WhatsApp</div>
+                  <div class="p-cards" data-rv>
+                    <div class="p-mini"><div class="p-lb">Conversas</div><div class="p-num" data-n="214">214</div></div>
+                    <div class="p-mini"><div class="p-lb">Pedidos de agendamento</div><div class="p-num" data-n="58">58</div></div>
+                    <div class="p-mini"><div class="p-lb">Passadas para a equipe</div><div class="p-num" data-n="16">16</div></div>
+                    <div class="p-mini"><div class="p-lb">Fora do horário</div><div class="p-num am" data-n="71">71</div></div>
+                  </div>
+                  <div data-rv>
+                    <div class="p-lt">De onde vieram as pacientes</div>
+                    <div class="p-track duo"><div class="p-fill" data-w="34.6"></div><div class="p-fill am" data-w="65.4"></div></div>
+                    <div class="p-leg"><span><i></i>Seu site · <b data-n="74">74</b></span><span><i class="am"></i>Direto, sem origem · <b data-n="140">140</b></span></div>
+                  </div>
+                  <div class="p-lists">
+                    <div data-rv><div class="p-lt">O que as pacientes mais procuraram</div><div class="p-rows" data-lista="assuntos"></div></div>
+                    <div data-rv><div class="p-lt">Por que algumas foram passadas para a equipe</div><div class="p-rows" data-lista="motivos"></div></div>
+                  </div>
+                  <div data-rv>
+                    <div class="p-lt">Em que horário as pacientes chamam</div>
+                    <div class="p-chart"></div>
+                    <div class="p-axis"><span>0h</span><span>3h</span><span>6h</span><span>9h</span><span>12h</span><span>15h</span><span>18h</span><span>21h</span></div>
+                    <div class="p-leg"><span><i></i>Horário comercial (8h às 18h)</span><span><i class="am"></i>Fora do horário</span></div>
+                  </div>
+                </div>
+                <div class="p-block">
+                  <div class="p-bt">Seu site</div>
+                  <div class="p-cards dois" data-rv>
+                    <div class="p-mini"><div class="p-lb">Visitas ao site</div><div class="p-num" data-n="1240">1.240</div></div>
+                    <div class="p-mini"><div class="p-lb">Chamaram no WhatsApp pelo site</div><div class="p-num" data-n="81">81</div></div>
+                  </div>
+                  <div class="p-lists">
+                    <div data-rv><div class="p-lt">As páginas mais visitadas</div><div class="p-rows" data-lista="paginas"></div></div>
+                    <div data-rv><div class="p-lt">De onde vieram as visitas</div><div class="p-rows" data-lista="fontes"></div></div>
+                  </div>
+                  <div class="p-lists">
+                    <div data-rv><div class="p-lt">As buscas no Google que trouxeram ao site</div><div class="p-rows" data-lista="buscas"></div></div>
+                    <div data-rv>
+                      <div class="p-lt">Celular ou computador</div>
+                      <div class="p-track duo"><div class="p-fill" data-w="72"></div><div class="p-fill am" data-w="28"></div></div>
+                      <div class="p-leg"><span><i></i>Celular · <b data-n="72" data-suf="%">72%</b></span><span><i class="am"></i>Computador · <b data-n="28" data-suf="%">28%</b></span></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="p-block">
+                  <div class="p-bt">Seu site nas inteligências artificiais</div>
+                  <div class="p-lists">
+                    <div data-rv><div class="p-lt">Visitas vindas de cada IA</div><div class="p-rows" data-lista="ias"></div></div>
+                    <div data-rv><div class="p-lt">Leituras do site pelos robôs de IA</div><div class="p-rows" data-lista="robos"></div></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="mcp-neck"></div>
+          <div class="mcp-base"></div>
+        </div>
+      </div>
+      <script>
+      (function () {
+        var root = document.getElementById('mcp-painel'); if (!root) return;
+        var vp = root.querySelector('.mcp-vp'), panel = root.querySelector('.mcp-panel');
+        var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        var dados = {
+          assuntos: [['Consulta ginecológica', 17], ['Endometriose', 11], ['DIU', 9], ['Mioma', 8], ['Histeroscopia', 7], ['Cirurgia íntima', 6]],
+          motivos: [['Valores e pagamento', 4], ['Agenda e horários', 3], ['Exames e laudos', 3], ['Pediu para falar com alguém', 2], ['Consulta já marcada', 2], ['Dúvida sobre saúde', 1], ['Pós-operatório', 1]],
+          paginas: [['Início', 412], ['Histeroscopia', 268], ['Endometriose', 174], ['Mioma', 121], ['Adenomiose', 96]],
+          fontes: [['Anúncios no Google', 386], ['Busca no Google', 341], ['Instagram', 287], ['Direto', 171], ['IA', 29], ['Outros', 26]],
+          buscas: [['histeroscopia', 64], ['dr fulano ginecologista', 41], ['mioma tratamento', 29], ['ginecologista particular', 22], ['endometriose sintomas', 18]],
+          ias: [['ChatGPT', 14], ['Gemini', 6], ['Perplexity', 4], ['Copilot', 3], ['Claude', 2]],
+          robos: [['ChatGPT', 186], ['Claude', 94], ['Perplexity', 71], ['Gemini', 52], ['Copilot', 18]]
+        };
+        var horas = [1, 0, 0, 0, 1, 1, 3, 6, 12, 16, 19, 17, 11, 12, 14, 13, 12, 17, 15, 14, 12, 9, 6, 3];
+        root.querySelectorAll('[data-lista]').forEach(function (box) {
+          var itens = dados[box.getAttribute('data-lista')], max = Math.max.apply(null, itens.map(function (it) { return it[1]; }));
+          itens.forEach(function (it) {
+            var row = document.createElement('div'); row.className = 'p-row';
+            row.innerHTML = '<div class="p-rl"><span></span><b data-n="' + it[1] + '"></b></div><div class="p-track"><div class="p-fill"></div></div>';
+            row.querySelector('span').textContent = it[0];
+            row.querySelector('b').textContent = it[1].toLocaleString('pt-BR');
+            row.querySelector('.p-fill').setAttribute('data-w', (it[1] / max * 100).toFixed(1));
+            box.appendChild(row);
+          });
+        });
+        var chart = root.querySelector('.p-chart'), tip = null;
+        horas.forEach(function (v, h) {
+          var col = document.createElement('div'); col.className = 'p-col';
+          var bar = document.createElement('div');
+          bar.className = 'p-bar' + (v === 0 ? ' zero' : (h >= 8 && h < 18 ? '' : ' am'));
+          bar.setAttribute('data-h', v === 0 ? '2px' : (v / 19 * 100).toFixed(1) + '%');
+          bar.style.transitionDelay = (h * 25) + 'ms';
+          col.appendChild(bar);
+          if (h === 10) { tip = document.createElement('div'); tip.className = 'p-tip'; tip.textContent = '10h · 19 pacientes'; col.appendChild(tip); }
+          chart.appendChild(col);
+        });
+        var grupos = Array.prototype.slice.call(root.querySelectorAll('[data-rv]'));
+        var run = 0, tocando = false, naTela = false, s = 1, vpH = 0, maxY = 0, y = 0;
+        function fmt(n) { return Math.round(n).toLocaleString('pt-BR'); }
+        function poe(el, v) { el.textContent = fmt(v) + (el.getAttribute('data-suf') || ''); }
+        function conta(el, n, dur, id) { var t0 = performance.now(); (function f(t) { if (id !== run) return; var k = Math.min(1, (t - t0) / dur), e = 1 - Math.pow(1 - k, 3); poe(el, n * e); if (k < 1) requestAnimationFrame(f); })(performance.now()); }
+        function revela(g, id, inst) {
+          if (g._rv) return; g._rv = true;
+          g.querySelectorAll('[data-n]').forEach(function (el) { var n = +el.getAttribute('data-n'); if (inst) poe(el, n); else conta(el, n, 1200, id); });
+          g.querySelectorAll('.p-fill').forEach(function (el) { el.style.width = el.getAttribute('data-w') + '%'; });
+          g.querySelectorAll('.p-bar').forEach(function (el) { el.style.height = el.getAttribute('data-h'); });
+          if (tip && g.contains(tip)) { if (inst) tip.classList.add('on'); else setTimeout(function () { if (id === run) tip.classList.add('on'); }, 1300); }
+        }
+        function zera() {
+          root.classList.add('semanim');
+          grupos.forEach(function (g) { g._rv = false;
+            g.querySelectorAll('[data-n]').forEach(function (el) { poe(el, 0); });
+            g.querySelectorAll('.p-fill').forEach(function (el) { el.style.width = '0'; });
+            g.querySelectorAll('.p-bar').forEach(function (el) { el.style.height = '0'; }); });
+          if (tip) tip.classList.remove('on');
+          void panel.offsetWidth; root.classList.remove('semanim');
+        }
+        function posiciona(v) { y = v; panel.style.transform = 'scale(' + s + ') translateY(' + (-y) + 'px)'; }
+        function mede() {
+          var w = vp.clientWidth; if (!w) return;
+          root.classList.toggle('w460', w < 560);
+          root.classList.toggle('estreito', w >= 560 && w < 900);
+          s = w / panel.offsetWidth; vpH = vp.clientHeight;
+          maxY = Math.max(0, panel.offsetHeight - vpH / s);
+          posiciona(Math.min(y, maxY));
+        }
+        function revelaVisiveis(id) { var fundo = vp.getBoundingClientRect().bottom - 12; grupos.forEach(function (g) { if (!g._rv && g.getBoundingClientRect().top < fundo) revela(g, id, false); }); }
+        function espera(ms, id) { return new Promise(function (r) { setTimeout(function () { r(id === run); }, ms); }); }
+        function rola(de, ate, dur, id) {
+          return new Promise(function (res) { var t0 = performance.now();
+            (function f(t) { if (id !== run) return res(false);
+              var k = Math.min(1, (t - t0) / dur), e = k < .5 ? 2 * k * k : 1 - Math.pow(-2 * k + 2, 2) / 2;
+              posiciona(de + (ate - de) * e); revelaVisiveis(id);
+              if (k < 1) requestAnimationFrame(f); else res(true); })(performance.now()); });
+        }
+        function estadoFinal() { run++; grupos.forEach(function (g) { g._rv = false; revela(g, run, true); }); posiciona(0); }
+        async function toca() {
+          var id = ++run; tocando = true;
+          while (id === run) {
+            zera(); posiciona(0);
+            if (!await espera(500, id)) return;
+            revelaVisiveis(id);
+            if (!await espera(1800, id)) return;
+            if (maxY > 0 && !await rola(0, maxY, Math.max(6000, maxY * 14), id)) return;
+            if (!await espera(2500, id)) return;
+            if (!await rola(y, 0, 2500, id)) return;
+            if (!await espera(1500, id)) return;
+          }
+        }
+        function para() { tocando = false; estadoFinal(); }
+        mede(); estadoFinal();
+        if ('ResizeObserver' in window) new ResizeObserver(mede).observe(vp); else window.addEventListener('resize', mede);
+        if (reduce || !('IntersectionObserver' in window)) return;
+        new IntersectionObserver(function (es) { es.forEach(function (e) { naTela = e.isIntersecting; if (naTela) { if (!tocando) toca(); } else if (tocando) para(); }); }, { threshold: 0.3 }).observe(root);
+        document.addEventListener('visibilitychange', function () { if (document.hidden) { if (tocando) para(); } else if (naTela && !tocando) toca(); });
+      })();
+      </script>
+      <!-- ===== fim do widget painel ===== -->
+
+    </div>
+    <p class="legenda">Painel de exemplo.</p>
+  </div>
+</section>
+
+<!-- ===== 15 · Investimento ===== -->
+<section class="sec" id="investimento">
+  <div class="wrap" data-reveal>
+    <div class="cab centro">
+      <p class="rotulo">Investimento</p>
+      <h2>Um investimento mensal. Sem taxa de implantação.</h2>
+      <p>O site, a hospedagem, a manutenção, a gestão dos anúncios e a Secretária IA, num plano só.</p>
+    </div>
+    <div class="preco-card">
+      <div class="preco-l">
+        <span class="cmp-tag">Plano</span>
+        <h3>Secretária IA + tráfego + site completo</h3>
+        <p>Para quem quer tudo pronto, com ou sem site hoje.</p>
+        <ul class="incl">
+          <li><svg class="ico" aria-hidden="true"><use href="#i-ok"/></svg>Site feito para a sua especialidade, como o do Dr. Lucas Santana</li>
+          <li><svg class="ico" aria-hidden="true"><use href="#i-ok"/></svg>Hospedagem e manutenção do site</li>
+          <li><svg class="ico" aria-hidden="true"><use href="#i-ok"/></svg>Gestão dos anúncios no Google, no Instagram e em outras plataformas, conforme a sua escolha</li>
+          <li><svg class="ico" aria-hidden="true"><use href="#i-ok"/></svg>Medição completa: Google Analytics, Search Console, conversão do Google Ads e registro dos cliques</li>
+          <li><svg class="ico" aria-hidden="true"><use href="#i-ok"/></svg>Secretária IA 24 horas no WhatsApp que o consultório já usa</li>
+          <li><svg class="ico" aria-hidden="true"><use href="#i-ok"/></svg>Painel completo e relatório em PDF</li>
+        </ul>
+      </div>
+      <div class="preco-r">
+        <p class="preco-val">R$&nbsp;2.997,90</p>
+        <p class="preco-per">por mês</p>
+        <p class="preco-extra">+ anúncios: mínimo de R$&nbsp;500 por mês, no seu cartão</p>
+        <a class="btn btn-wa" href="https://wa.me/5598981706504?text=Ol%C3%A1%21%20Vim%20pela%20p%C3%A1gina%20do%20site%20completo." target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg>Quero o site completo</a>
+        <p class="preco-nota">Fidelidade de 3 meses; depois disso, acaba. Sem taxa de implantação. Começa assim que o pagamento é feito.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 16 · Perguntas frequentes ===== -->
+<section class="sec sec-alt" id="duvidas">
+  <div class="wrap" data-reveal>
+    <div class="cab centro">
+      <p class="rotulo">Dúvidas</p>
+      <h2>Perguntas frequentes</h2>
+    </div>
+    <div class="faq">
+      <details><summary>Preciso ter site?</summary><p>Não. Se você já tem, ele é o ponto de partida do novo; se não tem, começamos do zero.</p></details>
+      <details><summary>A hospedagem está inclusa?</summary><p>Sim. A hospedagem e a manutenção do site estão no preço do plano.</p></details>
+      <details><summary>Quando começa?</summary><p>Assim que o pagamento é feito.</p></details>
+      <details><summary>Meu site atual sai do ar durante a construção?</summary><p>Não. Ele continua no ar, sem nenhuma mudança, até a troca.</p></details>
+      <details><summary>E o que o meu site já conquistou no Google?</summary><p>Os endereços antigos são mantidos, e os que mudam são redirecionados, para não perder o que o site já tinha conquistado.</p></details>
+      <details><summary>Quem escreve os textos?</summary><p>Os textos do seu site atual entram palavra por palavra. Os novos são escritos pela equipe, sem copiar outros sites, e os fatos são confirmados com você.</p></details>
+      <details><summary>O que eu preciso entregar?</summary><p>O seu logo, se tiver, fotos suas e do consultório, e a confirmação dos fatos: credenciais, endereço e horário. O resto a equipe faz.</p></details>
+      <details><summary>O site diz que a secretária é uma IA?</summary><p>Não nos textos do site. Só a política de privacidade descreve a secretária como assistente virtual, como a LGPD pede.</p></details>
+      <details><summary>E se eu atender em mais de uma cidade?</summary><p>O site ganha a versão para a outra cidade.</p></details>
+      <details><summary>Como o site se adapta à minha especialidade?</summary><p>Mudam a lista de doenças e procedimentos, a cidade, os textos e as fotos. O processo, os tipos de página e a medição se repetem. Os números desta página são de um consultório de ginecologia, em São Luís.</p></details>
+      <details><summary>Os anúncios são só no Google?</summary><p>Não. A MedCai cuida dos seus anúncios no Google, no Instagram e em outras plataformas, conforme a sua escolha. Os números de anúncios desta página vêm dos anúncios no Google do Dr. Lucas Santana.</p></details>
+      <details><summary>O valor dos anúncios está incluso no preço?</summary><p>Não. O plano custa R$&nbsp;2.997,90 por mês. Os anúncios são pagos por você, no seu cartão, com mínimo de R$&nbsp;500 por mês.</p></details>
+      <details><summary>Por que o mínimo de R$&nbsp;500 por mês?</summary><p>Com pouco investimento, os anúncios aparecem para pouca gente. Por isso, R$&nbsp;500 por mês é o mínimo para a MedCai cuidar dos seus anúncios. Acima disso, você escolhe quanto investir.</p></details>
+      <details><summary>Clique no WhatsApp é consulta marcada?</summary><p>Não. Clique é o toque no botão do WhatsApp do site. No WhatsApp, a secretária recolhe os dados e envia o pedido de agendamento à sua equipe, que confirma a data.</p></details>
+      <details><summary>Preciso trocar o número de WhatsApp?</summary><p>Não. A secretária atende no número que o consultório já usa.</p></details>
+      <details><summary>Se eu cancelar, o site e o domínio ficam comigo?</summary><p>Sim.</p></details>
+      <details><summary>Tem fidelidade ou taxa de implantação?</summary><p>Fidelidade de 3 meses; depois disso, acaba. Não há taxa de implantação. Para cancelar, basta falar com a MedCai pelo WhatsApp.</p></details>
+      <details><summary>Dá para mudar de plano?</summary><p>Sim, para cima ou para baixo.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 17 · Chamada final ===== -->
+<section class="cta-final">
+  <div class="wrap" data-reveal>
+    <h2>Vamos construir o site do seu consultório?</h2>
+    <p>Conte como o seu consultório recebe pacientes hoje, com ou sem site. A gente mostra como o site, os anúncios e a secretária entram na sua rotina.</p>
+    <a class="btn btn-wa" href="https://wa.me/5598981706504?text=Ol%C3%A1%21%20Vim%20pela%20p%C3%A1gina%20do%20site%20completo." target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg>Falar no WhatsApp</a>
+  </div>
+</section>
+
+</main>
+
+<!-- ===== K12 · Rodapé ===== -->
+<footer class="rodape">
+  <div class="wrap">
+    <span class="marca"><span class="marca-m" aria-hidden="true">M</span>MedCai</span>
+    <p>GO Fácil Cursos e Serviços LTDA · CNPJ 24.971.922/0001-04</p>
+    <p class="marcador">[POLÍTICA DE PRIVACIDADE — link na montagem]</p>
+  </div>
+</footer>
+
+<!-- ===== K2 · Botão fixo (só no celular) ===== -->
+<a class="btn btn-wa pulse fixo" href="https://wa.me/5598981706504?text=Ol%C3%A1%21%20Vim%20pela%20p%C3%A1gina%20do%20site%20completo." target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg>Falar no WhatsApp</a>
+
+<script>
+/* Movimento da página: blocos surgem uma vez, números contam, destaque do botão, botão fixo. */
+(function () {
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var io = 'IntersectionObserver' in window;
+  function fmt(v, dec) { return v.toLocaleString('pt-BR', { minimumFractionDigits: dec, maximumFractionDigits: dec }); }
+  function conta(el) {
+    var alvo = el.getAttribute('data-count'), n = parseFloat(alvo), dec = (alvo.split('.')[1] || '').length, t0 = performance.now();
+    (function f(t) { var k = Math.min(1, (t - t0) / 1500), e = 1 - Math.pow(1 - k, 3); el.textContent = fmt(n * e, dec); if (k < 1) requestAnimationFrame(f); })(t0);
+  }
+  var fixo = document.querySelector('.fixo'), cta = document.getElementById('cta-abertura');
+  var passou = false, naTela = [];
+  function atualizaFixo() { fixo.classList.toggle('on', passou && naTela.length === 0); }
+  if (io && fixo && cta) {
+    new IntersectionObserver(function (es) { es.forEach(function (e) { passou = !e.isIntersecting && e.boundingClientRect.top < 0; }); atualizaFixo(); }).observe(cta);
+    /* esconde o botão fixo enquanto o botão do cartão de preço (seção 15) estiver na tela */
+    var ioCaixa = new IntersectionObserver(function (es) { es.forEach(function (e) { var i = naTela.indexOf(e.target); if (e.isIntersecting) { if (i < 0) naTela.push(e.target); } else if (i >= 0) naTela.splice(i, 1); }); atualizaFixo(); });
+    document.querySelectorAll('.preco-r .btn').forEach(function (b) { ioCaixa.observe(b); });
+  }
+  if (reduce || !io) return;
+  document.documentElement.classList.add('js-motion');
+  document.querySelectorAll('[data-count]').forEach(function (el) { el.textContent = fmt(0, (el.getAttribute('data-count').split('.')[1] || '').length); });
+  var ioRv = new IntersectionObserver(function (es) {
+    es.forEach(function (e) {
+      if (!e.isIntersecting) return;
+      e.target.classList.add('in');
+      e.target.querySelectorAll('[data-count]').forEach(function (el) { setTimeout(function () { conta(el); }, 250); });
+      ioRv.unobserve(e.target);
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
+  document.querySelectorAll('[data-reveal]').forEach(function (el) { ioRv.observe(el); });
+  var ioBt = new IntersectionObserver(function (es) { es.forEach(function (e) { e.target.classList.toggle('vis', e.isIntersecting); }); }, { threshold: 0.5 });
+  document.querySelectorAll('.pulse').forEach(function (el) { ioBt.observe(el); });
+})();
+</script>
+</body>
+</html>
